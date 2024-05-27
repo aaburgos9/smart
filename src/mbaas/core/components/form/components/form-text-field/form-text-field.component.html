@@ -1,31 +1,31 @@
-<div class="dav-formElement" [formGroup]="group" *ngIf="!config.isHidden">
+<div class="smart-formElement--{{config.orientation}}"    [formGroup]="group" *ngIf="!config.isHidden">
   <label
     *ngIf="config.label"
     [htmlFor]="config.textfieldAccess"
-    class="dav-formElement__label"
+    class="smart-formElement__label"
     >{{ config.label }}
     <span
       *ngIf="config.additionalLabel"
-      class="dav-formElement__additionalLabel"
+      class="smart-formElement__additionalLabel"
       >{{ config.additionalLabel }}</span
     ></label
   >
   <div
     [class]="validateInputClass(false)"
     [ngClass]="{
-      'dav-textField__disabledState': isEditableField,
-      'dav-filledOut': isFilledOut
+      'smart-textField__disabledState': isEditableField,
+      'smart-filledOut': isFilledOut
     }"
   >
-    <div class="dav-leftIconTextfield">
+    <div class="smart-leftIconTextfield">
       <img
-        class="dav-textField__innerIcon__icon"
+        class="smart-textField__innerIcon__icon"
         src="{{ config.trailingIcon }}"
         alt="innerIcon"
         *ngIf="config.trailingIcon"
       />
     </div>
-    <div class="dav-leftIconTextfield"
+    <div class="smart-leftIconTextfield"
     *ngIf="config.icon ">
       <img  class="icon-input"
         src="./assets/icons/default-icons/{{config.icon}}.svg"
@@ -52,7 +52,7 @@
     />
 
     <button
-      class="dav-textField__buttonAction"
+      class="smart-textField__buttonAction"
       name="davEditTextfield"
       *ngIf="showIcon"
       (click)="onActionTextfield(); onEmitButtonAction.emit()"
@@ -62,6 +62,6 @@
   </div>
 </div>
 
-<p *ngIf="config.directionHelper" class="dav-directionHelper">
+<p *ngIf="config.directionHelper" class="smart-directionHelper">
   {{ config.directionHelper }}
 </p>

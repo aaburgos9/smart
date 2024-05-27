@@ -133,6 +133,7 @@ export interface FieldConfig {
   defaultOption?: string;
   optionKey?: string;
   descriptionKey?: string;
+  orientation?: string;
   
 
 

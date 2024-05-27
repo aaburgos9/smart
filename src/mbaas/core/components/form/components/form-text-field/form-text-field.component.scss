@@ -5,7 +5,7 @@
   width: 100%;
   height: 40px;
   padding: 8px;
-  border: 1px solid var(--gris-003);
+  border: 1px solid rgb(198 198 198);
   border-radius: 8px;
   background-color: var(--gris-007);
   color: var(--negro-800);
@@ -20,13 +20,12 @@
     cursor: not-allowed;
     background-color: var(--background-disabled);
   }
-
   &::placeholder {
     color: var(--gray-6765);
   }
 
   &:focus {
-    @extend .dav-filledOut;
+    @extend .smart-filledOut;
   }
 
   &:-ms-reveal,
@@ -35,18 +34,50 @@
   }
 }
 
-.dav-textField {
+.smart-textField {
   @extend %textFieldGeneral;
-  position: relative;
-  display: flex;
-  align-items: center;
+  width: calc(100% - 20px);
+  height: 40px;
+  padding: 8px;
+  margin: 10px;
+  padding-left: 35px;
+  min-height: 24px;
+
+  &--horizontal {
+    @extend .smart-textField;
+    @include prefix((display: flex,
+        flex-direction: row,
+        align-items: center,
+        justify-content:space-evenly,
+      ), webkit ms moz);
+    gap: 8px;
+    width: 100%;
+
+    &__input {
+      padding: 8px;
+      text-align: center;
+      width: max-content;
+      width: 100%;
+      padding: 0;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &--vertical {
+    @extend .smart-textField;
+    flex-direction: column;
+  }
 
   input {
     width: 100%;
   }
 
+
   &__disabledState {
-    @extend .dav-textField;
+    @extend .smart-textField;
     background-color: var(--background-disabled);
     color: var(--text-disabled);
     cursor: not-allowed;
@@ -55,7 +86,7 @@
   }
 
   &__disabled {
-    @extend .dav-textField;
+    @extend .smart-textField;
     background-color: var(--background-disabled);
     color: var(--text-disabled);
     cursor: not-allowed;
@@ -70,6 +101,7 @@
     input {
       width: 100%;
     }
+
     @include prefix((border: 1px solid var(--rojo-900),
         appearance: none,
       ), webkit moz ms o);
@@ -112,6 +144,7 @@
     input {
       width: 100%;
     }
+
     &:-ms-reveal,
     &:-ms-clear {
       display: none;
@@ -131,12 +164,12 @@
   }
 
   &__passwordLastNumber {
-    @extend .dav-textField__password;
+    @extend .smart-textField__password;
   }
 }
 
 
-.dav {
+.smart {
   &-filledOut {
     border: 1px solid var(--gris-001);
     background-color: var(--gris-007);
@@ -151,12 +184,13 @@
     position: absolute;
     bottom: 0;
     left: 8px;
+
   }
 
-  &-directionHelper{
-      @extend %defaultFont;
-      font-size: var(--font-xxs);
-      color: var(--gray-6765);
-      padding: 8px 8px 0px 8px;
+  &-directionHelper {
+    @extend %defaultFont;
+    font-size: var(--font-xxs);
+    color: var(--gray-6765);
+    padding: 8px 8px 0px 8px;
   }
 }

@@ -5,15 +5,19 @@
   &formElement {
     &__label {
       margin-left: 8px;
-      @extend %defaultFont;
-      font-size: var(--font-xs);
-      font-weight: var(--fw-medium);
+      width: 100%;
+      padding: 0px 15px;
+      min-height: 24px;
+      font-size: var(--font-medium);
+      font-weight: 500 !important;
     }
 
-    &__additionalLabel {
-      @extend %defaultFont;
-      font-size: var(--font-xxxs);
-      color: var(--gray-6765);
-    }
+
+  }
+
+  &__additionalLabel {
+    @extend %defaultFont;
+    font-size: var(--font-xxxs);
+    color: var(--gray-6765);
   }
 }

@@ -6,6 +6,7 @@ import { MTS001Component } from './mts001/mts001.component';
 import { LoginComponent } from './account/login/login.component';
 import { ResetPasswordComponent } from './account/reset-password/reset-password.component';
 import { NewPasswordComponent } from './account/new-password/new-password.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -48,6 +49,16 @@ const routes: Routes = [
     ],
     data: {
       stepId: MBAAS_STEPS.NEWPASS001.STEP
+    }
+  },
+  {
+    path: MBAAS_STEPS.REGISTER001.ROUTE,
+    component:RegisterComponent,
+    canActivate: [
+      AccessStepGuard
+    ],
+    data: {
+      stepId: MBAAS_STEPS.REGISTER001.STEP
     }
   }
 ];

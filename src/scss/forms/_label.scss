@@ -5,8 +5,9 @@
       &__label{
           margin-left: 8px;
           @extend %defaultFont;
+          
           font-size: var(--font-medium);
-          font-weight: var(--fw-medium);
+          font-weight: 500 !important;
 
           .opcional{
             font-size: 11px;

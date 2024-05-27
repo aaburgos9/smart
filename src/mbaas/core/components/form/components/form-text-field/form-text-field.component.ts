@@ -13,6 +13,10 @@ export class FormTextFieldComponent implements OnInit {
   public config: FieldConfig;
   public group: FormGroup;
   private formControl: FormControl;
+    /**
+  * input que indica la orientación de los botones
+  */
+ 
 
   @ViewChild('input') input: any;
 
@@ -38,15 +42,15 @@ export class FormTextFieldComponent implements OnInit {
   /**
   * Clases del div contenedor del input
   */
-  private simpleClass: string = 'dav-textField';
-  private editTrailingIconClass: string = 'dav-textField__trailingIcon';
-  private editClass: string = 'dav-textField__edit';
+  private simpleClass: string = 'smart-textField';
+  private editTrailingIconClass: string = 'smart-textField__trailingIcon';
+  private editClass: string = 'smart-textField__edit';
 
-  private invalidFieldClass: string = 'dav-textField__invalidField';
-  private filledOutClass: string = 'dav-filledOut';
+  private invalidFieldClass: string = 'smart-textField__invalidField';
+  private filledOutClass: string = 'smart-filledOut';
 
-  private passwordClass: string = 'dav-textField__password';
-  private viewPasswordClass: string = 'dav-textField__password--view';
+  private passwordClass: string = 'smart-textField__password';
+  private viewPasswordClass: string = 'smart-textField__password--view';
 
   // ------------------------
   public divNgClass: string = this.simpleClass;
@@ -108,7 +112,7 @@ export class FormTextFieldComponent implements OnInit {
    * cuando el campo está lleno.
    */
   validateInputClass(isFilledOut: boolean): string {
-    if (this.config.disabled) this.divNgClass = 'dav-textField dav-textField__disabled';
+    if (this.config.disabled) this.divNgClass = 'smart-textField smart-textField__disabled';
     if (this.config.textfieldType === TextfieldTypes.EDIT_TRAILING_ICON) this.divNgClass = this.editTrailingIconClass;
     if (this.config.textfieldType === TextfieldTypes.EDIT) this.divNgClass = this.editClass;
     if (this.config.textfieldType === TextfieldTypes.PASSWORD || this.config.textfieldType === TextfieldTypes.PASSWORD_LAST_CHARACTER) this.divNgClass = this.passwordClass;

@@ -16,6 +16,7 @@ import { ButtonsModule } from '../core/components/button/buttons.module';
 import { LayoutsModule } from '../core/components/layouts/layouts.module';
 import { ResetPasswordComponent } from './account/reset-password/reset-password.component';
 import { NewPasswordComponent } from './account/new-password/new-password.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -25,6 +26,7 @@ import { NewPasswordComponent } from './account/new-password/new-password.compon
     LoginComponent,
     ResetPasswordComponent,
     NewPasswordComponent,
+    RegisterComponent
 
   ],
   imports: [

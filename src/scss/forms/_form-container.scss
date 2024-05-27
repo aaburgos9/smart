@@ -7,10 +7,18 @@
 
   &formElement {
     display: flex;
+    margin: 1em 0 0 0;
     flex-direction: column;
     width: 100%;
     position: relative;
     gap: 8px;
+    &--horizontal {
+     display: inline-block;
+     @media (max-width: 500px) {
+      display: inline;
+    }
+    }
+
 
     &:first-of-type{
       gap: 0;
@@ -37,3 +45,4 @@
     }
   }
 }
+ 

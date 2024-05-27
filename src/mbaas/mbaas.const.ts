@@ -103,6 +103,12 @@ export const MBAAS_STEPS = {
 		STEP: 'NEWPASS001',
 		ROUTE: 'NuevaContraseña',
 		ROUTE_ID: 'newpass001'
+	},
+	
+	REGISTER001:{
+		STEP: 'REGISTER001',
+		ROUTE: 'CrearCuenta',
+		ROUTE_ID: 'register001'
 	}
 
 };

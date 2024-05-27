@@ -121,28 +121,28 @@ describe('FormTextFieldComponent', () => {
     component.config.disabled = true;
     component.validateInputClass(true);
     expect(component).toBeTruthy();
-    expect(component.divNgClass).toContain('dav-textField__password');
+    expect(component.divNgClass).toContain('smart-textField__password');
   });
 
   it('should method validateInputClass TextfieldTypes.EDIT_TRAILING_ICON', () => {
     component.config.textfieldType = TextfieldTypes.EDIT_TRAILING_ICON;
     component.validateInputClass(true);
     expect(component).toBeTruthy();
-    expect(component.divNgClass).toContain('dav-textField__trailingIcon');
+    expect(component.divNgClass).toContain('smart-textField__trailingIcon');
   });
 
   it('should method validateInputClass TextfieldTypes.EDIT', () => {
     component.config.textfieldType = TextfieldTypes.EDIT;
     component.validateInputClass(true);
     expect(component).toBeTruthy();
-    expect(component.divNgClass).toContain('dav-textField__edit');
+    expect(component.divNgClass).toContain('smart-textField__edit');
   });
 
   it('should method validateInputClass TextfieldTypes.PASSWORD', () => {
     component.config.textfieldType = TextfieldTypes.PASSWORD;
     component.validateInputClass(true);
     expect(component).toBeTruthy();
-    expect(component.divNgClass).toContain('dav-textField__password');
+    expect(component.divNgClass).toContain('smart-textField__password');
   });
 
   it('should method validateInputClass TextfieldTypes.EDIT_TRAILING_ICON', () => {
@@ -157,7 +157,7 @@ describe('FormTextFieldComponent', () => {
     component.invalidField = true;
     component.validateInputClass(false);
     expect(component).toBeTruthy();
-    expect(component.divNgClass).toContain('dav-textField__invalidField');
+    expect(component.divNgClass).toContain('smart-textField__invalidField');
   });
 
   it('should method validateInputClass', () => {
