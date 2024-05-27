@@ -1,0 +1,35 @@
+// =============================================================================
+// Import media querys - mixin
+// =============================================================================
+
+@import '../mediaquerys/_mediaquerys';
+
+*
+{
+  -webkit-tap-highlight-color:transparent;
+  -moz-tap-highlight-color:transparent;
+  -o-tap-highlight-color:transparent;
+  tap-highlight-color:transparent;
+}
+ body
+ {
+  
+  background-image: url(/assets/img/layout/bg_2x.jpg) !important;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @include media(md)
+  {
+    background-image: url(/assets/img/layout/bg_2x.jpg) !important;
+  }
+  @include media(lg)
+  {
+    background-image: url(/assets/img/layout/bg_2x.jpg) !important;
+  }
+  @include media(xlg)
+  {
+    background-image: url(/assets/img/layout/bg_3x.jpg) !important;
+  }
+}

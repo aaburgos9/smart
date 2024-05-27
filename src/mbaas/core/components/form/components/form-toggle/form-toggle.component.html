@@ -1,0 +1,24 @@
+<div class="formGroup">
+  <label for="" class="formGroup__label">
+    {{ config.label }}
+  </label>
+  <div class="contCheckboxSiNo">
+    <label>
+      <input
+        (click)="onCheckboxToggle()"
+        type="checkbox"
+        class="cambiar tamano"
+      />
+      <div class="switch">
+        <span></span>
+      </div>
+    </label>
+  </div>
+</div>
+
+<div class="formGroup" [ngClass]="{ invisible: !checkboxToggle }">
+  <mbaas-form-container
+    #childrenContainer="formContainer"
+    [config]="childs"
+  ></mbaas-form-container>
+</div>

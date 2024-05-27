@@ -1,0 +1,292 @@
+@import './variables';
+//------------------------------------------- Mixins
+
+//============ Prefix ============
+@mixin prefix($declarations, $prefixes: ()) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+
+    // Output standard non-prefixed declaration
+    #{$property}: $value;
+  }
+}
+
+//How to use prefix
+/*
+@include prefix((
+  display: flex,
+  align-items: center,
+  justify-content: flex-start
+), webkit moz ms o);
+*/
+
+//============ End Prefix ============
+
+//============ Filter overlay ============
+@mixin capa_negra($r, $g, $b, $a) {
+  background-color: rgba($r, $g, $b, $a);
+  background-blend-mode: overlay;
+}
+
+//How to use Filtro Background's
+/*
+Ejemplo pendiente
+*/
+
+//============ End Filter overlay ============
+
+//============ Keyframes ============
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+//How to use Filtro Background's
+/*
+@include keyframes([animation_name]){
+  0%{
+    properties
+  }
+  100%{
+    properties
+  }
+}
+
+Se pueden adjuntar más porcentajes si se requiere, en este caso solo hay dos, inicio y fin.
+*/
+
+//============ End Keyframes ============
+
+//============ Text Shorten ============
+@mixin text-shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//How to use Text Shorten
+/*
+p{
+    @include text-shorten();
+}
+*/
+
+//============ End Text Shorten ============
+
+
+// first Movile
+@mixin media-up($breakpoint) {
+
+    $valuesMedia: map-get($media_queries, $breakpoint);
+    $split-values: str-split($valuesMedia, " ");
+
+    @debug length($split-values);
+
+    @if length($split-values) == 2{
+      @media only screen and (min-width: nth($split-values, 1)) and (max-width: nth($split-values, 2)){
+        @content;
+      }
+    } @else{
+      @media screen and (min-width: map-get($media_queries, $breakpoint)) {
+        @content;
+      }
+    }
+}
+
+
+
+@function str-split($string, $separator) {
+  $split-arr: ();
+  $index : str-index($string, $separator);
+
+  @while $index != null {
+
+      $item: str-slice($string, 1, $index - 1);
+      $split-arr: append($split-arr, $item);
+      $string: str-slice($string, $index + 1);
+      $index : str-index($string, $separator);
+  }
+
+  $split-arr: append($split-arr, $string);
+
+  @return $split-arr;
+}
+
+
+
+
+
+//============ Defaut Fonts Properties ============
+
+//How to use defaultFont
+/*
+p{
+    @include defaultFont([Se pueden incluir variables o dejar vacio]);
+
+    @include defaultFont($fz: 16px, $fw: medium, $lh: 18px, $ta: center);
+
+    $fz: -> [Property] -> font-size
+    $fw: -> [Property] -> font-weight
+    $lh: -> [Property] -> line-height
+    $ta: -> [Property] -> text-align
+    $c:  -> [Property] -> color
+}
+*/
+
+// el mapa de fw esta creado en _variables.scss
+// la hacer modificaciones tener en cuenta _properties.scss
+@mixin defaultFont(
+  $flag,
+  $ff: "init",
+  $fz: "init",
+  $fw: "init",
+  $lh: "init",
+  $ta: "init",
+  $c: "init",
+  $fs: "init"
+) {
+  @if $flag == 1 {
+    @include allProperty($ff, $fz, $fw, $lh, $ta, $c, $fs);
+  } @else {
+    @include partiallyProperty($ff, $fz, $fw, $lh, $ta, $c, $fs);
+  }
+}
+
+
+// Mixin para agregar todas las propiedades de las fuentes
+@mixin allProperty($ff, $fz, $fw, $lh, $ta, $c, $fs) {
+  @if $ff == "init" {
+    $ff: var(--firaSnas);
+  }
+  @if $fz == "init" {
+    $fz: var(--font-p);
+  }
+  @if $fw == "init" {
+    $fw: regular;
+  }
+  @if $ta == "init" {
+    $ta: left;
+  }
+  @if $c == "init" {
+    $c: var(--negro-800);
+  }
+  @if $fs == "init" {
+    $fs: normal;
+  }
+
+  $FzContent: inspect($fz);
+  @if ends-with($FzContent, "px") {
+    @if $lh == "init" {
+      $lh: $fz + 4;
+    }
+  } @else {
+    @if $lh == "init" {
+      $lh: initial;
+    }
+  }
+
+  @if map-has-key($mapFW, $fw) {
+    $fw: map-get($mapFW, $fw);
+  }
+
+  //Normal properties
+  font-family: $ff;
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: $fw;
+  text-align: $ta;
+  font-style: $fs;
+  color: $c;
+}
+
+// Mixin para agregar propiedades ralativas a las fuentes
+@mixin partiallyProperty($ff, $fz, $fw, $lh, $ta, $c, $fs) {
+  @if map-has-key($mapFW, $fw) {
+    $fw: map-get($mapFW, $fw);
+  }
+
+  @if $ff != "init" {
+    font-family: $ff;
+  }
+  @if $fz != "init" {
+    font-size: $fz;
+  }
+  @if $lh != "init" {
+    line-height: $lh;
+  }
+  @if $fw != "init" {
+    font-weight: $fw;
+  }
+  @if $ta != "init" {
+    text-align: $ta;
+  }
+  @if $c != "init" {
+    color: $c;
+  }
+  @if $fs != "init" {
+    font-style: $fs;
+  }
+}
+
+
+
+
+//Funcion parar encontrar caracteres de un string
+@function ends-with($string, $find) {
+  @if (
+    str-index($string, $find) == (str-length($string) - str-length($find) + 1)
+  ) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+
+
+
+
+//============ Darken ============
+@function darken($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+//Hoe to use darken
+/*
+color: darken([color],[porcentaje])
+p{
+    color: darken($text-color, 50%);
+}
+*/
+
+//============ End darken ============
+
+//============ Lighten ============
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+//How to use lighten
+/*
+color: lighten([color],[porcentaje])
+p{
+    color: lighten($text-color, 50%);
+}
+*/
+
+//============ End Lighten ============

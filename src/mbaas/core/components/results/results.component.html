@@ -1,0 +1,47 @@
+<!-- region results component -->
+<ul class="smart-results">
+  <li *ngFor="let result of resultsElements; index as i" class="smart-results__item">
+    <div ngClass="{{result.expand ? 'smart-contentInfo--cursor' : type==='top'? 'smart-contentInfo--flexTop' : 'smart-contentInfo'}}">
+      <div class="smart-contentInfo__info">
+        <div class="smart-contentInfo__heading">
+          <h3 *ngIf="result.label" class="smart-title">
+            {{ result.label }}
+          </h3>
+          <div class="smart-contentInfo__icon" *ngIf="result.expand">
+            <img [ngClass]="this.selected === i ? 'rotate' : ''" class=""
+              src="../../../../assets/icons/default-icons/icon-arrowDown.svg" alt="arrow" />
+          </div>
+        </div>
+        <p *ngIf="result.info" class="smart-description--condensed">
+          {{ result.info }}
+        </p>
+        <div *ngIf="result.subinfo" class="smart-subDescription">
+          <p>{{ result.subinfo.text }}</p>
+          <div ngClass="{{
+              result.subinfo.icon ? 'smart-subDescription--divider' : ''
+            }}">
+            <img *ngIf="result.subinfo.icon" src="{{ result.subinfo.icon }}" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="smart-contentInfo__info--right">
+        <div class="smart-contentInfo__heading">
+          <h3 *ngIf="result.secondlabel" class="smart-title">
+            {{ result.secondlabel }}
+          </h3>
+        </div>
+        <p *ngIf="result.secondinfo" class="smart-description--condensed">
+          {{ result.secondinfo }}
+        </p>
+      </div>
+    </div>
+
+    <div [ngClass]="
+        this.selected === i ? 'smart-infoContainer show' : 'smart-infoContainer'
+      ">
+     <!-- <app-helper [textHelper]="result.content"></app-helper> -->
+    </div>
+  </li>
+</ul>
+
+<!-- endregion results component -->

@@ -1,0 +1,29 @@
+[
+  {
+    "int": {
+      "descripcion": "Proceso Vinculación Zona Interna",
+      "plan": {
+        "ADSVIN001": {
+          "ver": {
+            "label": "7.1. Link Ver datos cédula",
+            "type": "Link"
+          },
+          "pageView": {
+            "label": "7. Mis Datos",
+            "type": "Page view"
+          },
+          "continuar": {
+            "label": {
+                "ver": {
+                    "labe": "7.2. Botón \"Continuar\" Mis Datos",
+                    "type": "Button"
+                }
+            },
+            "type": "Button"
+          }
+        }
+      }
+    },
+    "ext": { "descripcion": "Proceso Vinculación Zona Externa", "plan": {} }
+  }
+]

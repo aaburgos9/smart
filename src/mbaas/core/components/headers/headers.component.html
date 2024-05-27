@@ -1,0 +1,15 @@
+
+<div class="topnav" [style.padding-left]="isExpanded? '0': '240px'" >
+  <a class="active" ><span style="font-size:30px;cursor:pointer" (click)="openAndCloseNav()">&#9776;</span></a>
+  <a *ngFor="let option of menuSuperior">
+    {{ option.name }}
+  </a>
+</div>
+
+<div id="mySidenav" class="sidenav" [ngClass]="expandedClass">
+  <a class="closebtn" (click)="openAndCloseNav()">&times;</a>
+  <a *ngFor="let option of menuLateral">
+    {{ option.name }}
+  </a>
+</div>
+

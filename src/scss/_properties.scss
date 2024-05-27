@@ -1,0 +1,212 @@
+//Properties - Propiedades generales para todos los componentes
+
+//-------------------- tamanios Porcentuales
+$listWhidth: 100, 95, 90, 80, 60, 50, 40, 20, 30, 70;
+@each $whidth in $listWhidth {
+    //----- tamanios
+    .wh-#{$whidth}{
+        width: $whidth+0%            !important;
+    }
+}
+
+.wh-auto{
+    width: auto            !important;
+}
+
+
+//-------------------- Max widths general
+$listMaxWidths:  550px, 650px, 750px;
+@each $widths in $listMaxWidths {
+    //----- Max width
+    .mxw-#{$widths}{
+        max-width: $widths              !important;
+    }
+}
+
+
+//-------------------- Margins
+$listMargins: 0px, 8px, 14px, 16px, 24px, 28px, 32px, auto;
+@each $margins in $listMargins {
+    //----- Margin top
+    .mt-#{$margins}{
+        margin-top: $margins            !important;
+    }
+    //----- Margin bottom
+    .mb-#{$margins}{
+        margin-bottom: $margins         !important;
+    }
+    //----- Margin left
+    .ml-#{$margins}{
+        margin-left: $margins         !important;
+    }
+    //----- Margin right
+    .mr-#{$margins}{
+        margin-right: $margins         !important;
+    }
+    //----- Margin vertical
+    .my-#{$margins}{
+        margin-top: $margins            !important;
+        margin-bottom: $margins         !important;
+    }
+    //----- Margin Horizontal
+    .mx-#{$margins}{
+        margin-left: $margins           !important;
+        margin-right: $margins          !important;
+    }
+}
+
+
+//-------------------- Paddings
+$listPaddings: 0px, 8px, 14px, 16px, 24px, 32px;
+@each $paddings in $listPaddings {
+    //----- Padding top
+    .pt-#{$paddings}{
+        padding-top: $paddings           !important;
+    }
+    //----- Padding bottom
+    .pb-#{$paddings}{
+        padding-bottom: $paddings        !important;
+    }
+    //----- Padding left
+    .pl-#{$paddings}{
+        padding-left: $paddings        !important;
+    }
+    //----- Padding right
+    .pr-#{$paddings}{
+        padding-right: $paddings        !important;
+    }
+    //----- Padding vertical
+    .py-#{$paddings}{
+        padding-top: $paddings           !important;
+        padding-bottom: $paddings        !important;
+    }
+    //----- Padding horizontal
+    .px-#{$paddings}{
+        padding-left: $paddings          !important;
+        padding-right: $paddings         !important;
+    }
+}
+
+//-------------------- z-index
+$listZindex: 1, 2, 4, 6, 8, 10;
+@each $zindex in $listZindex {
+    //----- tamanios
+    .zi-#{$zindex}{
+        z-index: $zindex            !important;
+    }
+}
+
+
+//-------------------- Text align general
+$alignsTexts: left, center, right, justify;
+@each $aligns in $alignsTexts {
+    //----- Text align
+    .ta-#{$aligns}{
+        text-align: $aligns             !important;
+    }
+}
+
+
+//-------------------- Font sizes general
+$fontSizes: 11px, 12px, 14px, 16px, 18px, 20px, 22px, 34px;
+@each $sizes in $fontSizes {
+    //----- Font size
+    .fz-#{$sizes}{
+        font-size: $sizes                !important;
+    }
+}
+
+//-------------------- Line height general
+$listlh: 14px, 16px, 20px, 24px, 32px, 40px;
+@each $lh in $listlh {
+    //----- Font size
+    .lh-#{$lh}{
+        line-height: $lh                !important;
+    }
+}
+
+//-------------------- Font weight general
+// el mapa esta creado en _variables.scss
+@each $namefw, $valuefw in $mapFW {
+    //----- font weight
+    .fw-#{$namefw}{
+        font-weight: $valuefw       !important;
+    }
+}
+
+
+//-------------------- Text transforms general
+$textTransforms: uppercase, lowercase, capitalize;
+@each $transforms in $textTransforms {
+    //----- Text transforms
+    .tt-#{$transforms}{
+        text-transform: $transforms       !important;
+    }
+}
+
+
+//-------------------- Text decoration
+$textDecoration: underline, none;
+@each $transforms in $textDecoration {
+    //----- Text transforms
+    .td-#{$transforms}{
+        text-decoration: $transforms       !important;
+    }
+}
+
+
+//-------------------- Text Color
+// el mapa esta creado en _variables.scss
+@each $nameCt, $valueCt in $mapCTexto {
+    //----- font weight
+    .#{$nameCt}{
+        color: $valueCt       !important;
+    }
+}
+
+
+//-------------------- Font Family
+// el mapa esta creado en _variables.scss
+@each $nameFF, $valueFF in $mapFontFamily {
+    //----- font weight
+    .#{$nameFF}{
+        font-family: $valueFF       !important;
+    }
+}
+
+//-------------------- background color
+// el mapa esta creado en _variables.scss
+@each $nameBGC, $valueBGC in $mapBGColor {
+    //----- font weight
+    .#{$nameBGC}{
+        background-color: $valueBGC       !important;
+    }
+}
+
+
+//-------------------- Bloquear scroll - modales
+.is--scrollLocked {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+//-------------------- Ocultar elementos
+.hidden{
+    display: none !important;
+    pointer-events: none !important;
+}
+
+//-------------------- Borders
+.bb-show{
+    border-bottom: 1px solid #cacaca;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.bb-hide{
+    border-bottom: 0px      !important;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+

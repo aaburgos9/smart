@@ -1,0 +1,351 @@
+
+/**
+* Modules - forms - Range slider
+*/
+
+.rangeSlider 
+{
+	width: 100%;
+	margin: em(34) 0 em(18) 0;
+	padding: 0;
+	position: relative;
+	&--narrow
+	{
+		margin: em(18) 0 0 0;
+	}
+	label
+	{
+		&.small
+		{
+			padding: 0;
+			font-size: em(11);
+			margin: em(-12) 0;
+		}
+	}
+
+	&__quantityTitles
+	{
+		margin-top: -8px;
+		padding: 0;
+		position: relative;		
+		@include prefix((
+			display: flex,
+			align-items: center,
+			justify-content: space-between
+		), webkit moz ms);
+		span{
+			font-size: em(12);
+			font-weight: 400;
+			color: $gris-70
+		}
+		.titulo
+		{
+			animation-name: tamano-fuente;
+			animation-iteration-count: 1;
+			animation-duration: 4s;
+			animation-delay: 1.5s;
+		}
+		.signoMenos{
+			font-size: em(10);
+			@include prefix((
+				display: flex,
+				align-items: center,
+				justify-content: center
+			), webkit moz ms);
+			&::after{
+				content: "-";
+				margin-left: 0.2em;
+				font-size: em(12);
+			}
+			&--bold {
+				color: rgb(57, 57, 57);
+			}
+		}
+		.signoMas{
+			font-size: em(15);
+			font-weight: 500;
+			color: rgba($gris-93, 0.7);
+			@include prefix((
+				display: flex,
+				align-items: flex-start,
+				justify-content: flex-start
+			), webkit moz ms);
+			&::after{
+				content: "+";
+				font-size: em(12);
+			}
+			&--bold {
+				color: rgb(57, 57, 57);
+			}
+		}
+	}
+
+	&__quantityNumbers{
+		width: 100%;
+		margin-bottom: 5px;
+		span, strong{
+			color: $negro-57;
+			font-size: em(12);
+			font-weight: 100;
+		}
+		strong{
+			font-weight: bold;
+			color: #a3a3a3;
+		}
+	}
+	&__bubbleIndicator
+	{
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: $gris-93;
+		color: white;
+		font-weight: bold;
+		font-size: 0.7em;
+		left: 5px;
+		bottom: 40px;
+		position: absolute;
+		@include prefix((
+			box-sizing: border-box,
+			display: flex,
+			justify-content: center,
+			align-items: center,
+			// transform: translateX(2.2em),
+		), webkit moz o ms);
+		&:before
+		{
+			content: '';
+			position: absolute;
+			width: 0; 
+			height: 0; 
+			border-left: 12px solid transparent;
+			border-right: 12px solid transparent;
+			border-top: 14px solid $gris-93;
+			top: 23px;
+		}
+	}
+	&__input
+	{
+		width: 100%;
+		height: 5px;
+		border-radius: 5px;   
+		background: $gris-cc;
+		outline: none;
+		cursor: pointer;
+		background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, $gris-93), color-stop(100%, $gris-93));
+	    background-image: -webkit-linear-gradient($gris-93, $gris-93);
+	    background-image: -moz-linear-gradient($gris-93, $gris-93);
+	    background-image: -o-linear-gradient($gris-93, $gris-93);
+	    background-image: linear-gradient($gris-93, $gris-93);
+		background-repeat: no-repeat;
+		margin: 0;
+		padding: 0;
+	    cursor: pointer;
+		@include prefix((
+			box-sizing: border-box,
+			appearance: none
+		), webkit moz o ms);
+		&--animated
+		{
+			&::before{
+				content: url(/src/assets//img/icons/icono-psd-manogif.svg);
+				position: absolute;
+				top: em(25);
+				left: -5px;
+				z-index: 999;
+				animation-name: indicador;
+				animation-iteration-count: 1;
+				animation-duration: 4s;
+				visibility: hidden;
+				animation-delay: 1.5s;
+			}
+		}
+	}
+	&__labels
+	{
+		width: 100%;
+		padding: 0;
+		margin: -5px 0;
+		&--top
+		{
+			span
+			{
+				font-weight: bold !important;	
+			}
+		}
+		@include prefix((
+			box-sizing: border-box,
+			display: flex,
+			justify-content: space-between,
+			align-items: center
+		), webkit moz o ms);
+		&__label
+		{
+			font-weight: 100;
+			line-height: 1em;
+			font-size: em(11);
+			color: $gris-93;
+			margin-top: em(3);
+		}
+	}
+	::-webkit-slider-runnable-track 
+	{
+	    box-shadow: none;
+	    border: none;
+	    background: transparent;
+	    -webkit-appearance: none;
+	    @include prefix((
+			box-sizing: border-box,
+			appearance: none
+		), webkit moz o ms);
+	}
+
+	::-moz-range-track 
+	{
+	    box-shadow: none;
+	    border: none;
+	    background: transparent;
+	}
+
+	::-moz-focus-outer 
+	{
+	    border: 0;
+	}
+
+	::-webkit-slider-thumb 
+	{
+	    width: 21px;
+		height: 10px;
+		border-radius: 5px; 
+		background: white;
+		position: relative;
+		cursor: pointer;
+		box-shadow: 1px 2px 3px rgba($color: $gris-3a, $alpha: .2);
+		@include prefix((
+			box-sizing: border-box,
+			appearance: none
+		), webkit moz o ms);
+	}
+
+	::-moz-range-thumb 
+	{
+	    width: 21px;
+		height: 10px;
+		border-radius: 5px; 
+		background: white;
+		cursor: pointer;
+		box-shadow: 1px 2px 3px rgba($color: $gris-3a, $alpha: .2);
+		cursor: pointer;
+		@include prefix((
+			box-sizing: border-box,
+			appearance: none
+		), webkit moz o ms);
+	}
+
+	::-ms-ticks-after 
+	{ 
+	    display: none; 
+	}
+
+	::-ms-ticks-before 
+	{ 
+	    display: none; 
+	}
+
+	::-ms-track 
+	{ 
+	    background: gray;
+	    color: transparent;
+	    border: none;
+	}
+
+	::-ms-tooltip 
+	{ 
+	    display: none;
+	}
+}
+
+@keyframes indicador {
+	0% {
+        transform: rotateZ(0deg);
+		left: 0%;
+		visibility: visible;
+    }
+    15%{
+        transform: rotateZ(27.5deg);
+        left: 45%;
+    }
+
+    30%{
+        transform: rotateZ(27.5deg);
+        left: 45%;
+    }
+
+    45% {
+        transform:  rotateZ(45deg) translateY(5px);
+        left: 94%;
+    }
+
+    60% {
+        transform:  rotateZ(45deg) translateY(5px);
+        left: 94%;
+    }
+
+    75% {
+        transform: rotateZ(27.5deg);
+        left: 45%;
+    }
+
+    85% {
+        transform: rotateZ(27.5deg);
+        left: 45%;
+    }
+    
+    
+    100%{
+        left: 0%;
+        transform: translateX(0) rotateZ(0deg);
+        visibility: visible;
+    }
+}
+
+@keyframes tamano-fuente {
+    0% {
+        font-size: 14px !important; 
+    }
+    15%{
+        font-size: 16px !important; 
+    }
+
+    30%{
+        font-size: 16px !important; 
+    }
+
+    45% {
+        font-size: 18px !important; 
+    }
+
+    60% {
+        font-size: 18px !important; 
+    }
+
+    75% {
+        font-size: 16px !important; 
+    }
+
+    90% {
+        font-size: 16px !important; 
+    }
+    
+    100%{
+        font-size: 14px !important; 
+	}
+	
+
+}
+ 
+.texto-variable {
+    font-size: var(--fuente-variable) !important;
+    transition: font-size 0.4s;
+    line-height: 20px;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Mask</title>
+    <defs>
+        <path d="M7.33333333,0 C8.23335293,0 8.96296296,0.656649034 8.96296296,1.46666667 L8.962,5.703 L13.2,5.7037037 C13.9650167,5.7037037 14.5932323,6.35449784 14.6606729,7.18500382 L14.6666667,7.33333333 C14.6666667,8.23335293 14.0100176,8.96296296 13.2,8.96296296 L8.962,8.962 L8.96296296,13.2 C8.96296296,13.9650167 8.31216882,14.5932323 7.48166285,14.6606729 L7.33333333,14.6666667 C6.43331374,14.6666667 5.7037037,14.0100176 5.7037037,13.2 L5.703,8.962 L1.46666667,8.96296296 C0.701650013,8.96296296 0.0734343636,8.31216882 0.00599378727,7.48166285 L0,7.33333333 C0,6.43331374 0.656649034,5.7037037 1.46666667,5.7037037 L5.703,5.703 L5.7037037,1.46666667 C5.7037037,0.701650013 6.35449784,0.0734343636 7.18500382,0.00599378727 Z" id="path-1"></path>
+    </defs>
+    <g id="Moleculas" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="000-Moléculas---Buttons---004A" transform="translate(-672.000000, -3000.000000)">
+            <g id="02-Botones/SolicitarProducto/Enable" transform="translate(664.000000, 2992.000000)">
+                <g id="04-iconos/01-24x24_/General-icons/más-productos-Copy" transform="translate(8.666667, 8.666667)">
+                    <g id="Mask" transform="translate(0.000000, 0.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Combined-Shape" fill="#6E6E6E" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

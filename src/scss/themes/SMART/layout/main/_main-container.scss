@@ -1,0 +1,69 @@
+
+/**
+ * Layout - Main container
+ */
+
+ .container 
+ {
+     display: block;
+     margin: 0 auto;
+     width: 100%;
+     max-width: 850px;
+     max-width: 536px;
+     position: relative;
+     overflow-y: auto;
+     padding: em(17.5);
+     text-align: center;
+     height: 100vh;
+     background-color: transparent !important;
+     &--flexCenter
+     {
+        @include media(lg)
+        {
+            @include prefix((
+                display: flex,
+                flex-direction: column,
+                justify-content: center,
+                align-items: center
+            ), webkit moz o ms);
+        }
+        @include media(xlg)
+        {
+            @include prefix((
+                display: flex,
+                flex-direction: column,
+                justify-content: center,
+                align-items: center
+            ), webkit moz o ms);
+        }
+     }
+     &__imageSoat
+     {
+         width: em(70);
+         height: em(70);
+         margin: em(14) auto;
+         border-radius: 50%;
+         overflow: hidden;
+         @include prefix((
+             display: flex,
+             justify-content: center,
+             align-items: center,
+         ), webkit moz o ms);
+         img
+         {
+             height: 100%;
+         }
+     }
+     @include media(md){
+         overflow: visible;
+         padding-top: 0;
+     }
+     @include media(lg){
+         overflow: visible;
+         padding-top: 0;
+     }
+     @include media(xlg){
+         overflow: visible;
+         padding-top: 0;
+     }
+ }

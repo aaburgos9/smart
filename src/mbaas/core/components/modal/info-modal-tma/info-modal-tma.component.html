@@ -1,0 +1,14 @@
+<div class='container' style="background-color: transparent;">
+  <div class="modalContainer" *ngIf="data" [ngClass]="{'modalContainer--isShow': show && data?.display }">
+    <div class="infoModal">
+      <div [innerHTML]="data.message | passSecurityTrust: 'html'"></div>
+      <div class="infoModal__footer">
+        <button *ngFor=" let item of data.buttons" class="button button--primary" (click)="item.callback(onClose())">
+          <span class="button__label button__label--light" [innerHTML]="item.buttonText | passSecurityTrust: 'html'">
+
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

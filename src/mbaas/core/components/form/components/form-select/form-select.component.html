@@ -1,0 +1,34 @@
+<div class="formGroup" [formGroup]="group" [hidden]="config.isHidden">
+  <label for="valor-bienes" class="formGroup__label">
+    <span>
+      {{ config.label }}
+    </span>
+    <div class="tooltip" *ngIf="config.textTooltip">
+      <span class="tooltip__trigger tooltip__trigger--small"
+        ><img src="./assets/img/layout/icon-dv-asktooltip.svg"
+      /></span>
+      <span class="tooltip__message tooltip__message--topMiddle">
+        {{ config.textTooltip }}
+      </span>
+    </div>
+  </label>
+  <!-- <label class="formGroup__label">{{ config.label }}</label> -->
+  <select
+    [formControlName]="config.name"
+    class="formGroup__input formGroup__input--select formGroup__input--elipsis"
+  >
+    <option value="">{{ config.placeholder }}</option>
+    <option
+      *ngFor="let option of config.options"
+      [value]="option[config.valueSelect]"
+    >
+      {{ option[config.optionShow] }}
+    </option>
+  </select>
+  <!-- Out out balance - incluir clase isShow para presentar -->
+  <div *ngIf="config.balance" class="formGroup__outPutBalance" [ngClass]="{'formGroup__outPutBalance--isShow': config.showBalance}">
+    <span>{{ config?.labelBalance }}</span>
+    <span><strong>${{ saldoFormatted }}</strong></span>
+  </div>
+  <!-- End -->
+</div>

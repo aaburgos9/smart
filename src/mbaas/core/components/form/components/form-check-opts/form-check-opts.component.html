@@ -1,0 +1,17 @@
+<div #checkboxContainer class="checkboxContainer" [formGroup]="group" [mbaasTaggingClick]="config.name" [mbaasTaggingValue]="stateTagging">
+    <input
+        type="checkbox"
+        [checked]="config.checkedBox"
+        [formControlName]="config.name"
+        [name]="config.name"
+        (click)="setValue()"
+    >
+    <div class="checkmark"></div>
+    <label>
+        <span >
+            {{ config.checkLabel.initLabel }}
+            <strong (click)="clickEvent()"><a><u>{{ config.checkLabel.actionLabel }}</u></a></strong>
+            {{ config.checkLabel.endLabel }}
+        </span>
+    </label>
+</div>

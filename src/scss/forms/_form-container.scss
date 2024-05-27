@@ -1,0 +1,39 @@
+.smart- {
+  &formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &formElement {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    gap: 8px;
+
+    &:first-of-type{
+      gap: 0;
+    }
+  }
+  &formElementHorizontal {
+    @include prefix((display: flex,
+        flex-direction: row,
+        align-items: center,
+        justify-content:space-evenly,
+      ), webkit ms moz);
+    gap: 8px;
+    width: 100%;
+
+    &__input {
+      padding: 8px;
+      text-align: center;
+      width: max-content;
+      width: 100%;
+      padding: 0;
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+}

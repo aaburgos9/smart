@@ -1,0 +1,52 @@
+.retunsTable
+{
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: em(5);
+    tbody{
+        width: 100%;
+        tr{
+            th, td{
+                padding: em(5);
+            }
+            th{
+                background-color: rgba($gris-93, 0.8);
+                color: white;
+                font-weight: bold;
+                @include prefix((
+                    border-radius: em(5),
+                ), webkit moz o ms);
+                &:last-of-type{
+                    min-width: em(73);
+                }
+            }
+            td{
+                color: $negro-57;
+                vertical-align: middle;
+                background-color: $gris-ed;
+                font-size: 0.85em;
+                padding: em(9);
+                @include prefix((
+                    border-radius: em(5),
+                ), webkit moz o ms);
+                &:first-of-type{
+                    text-align: left;
+                }
+                span{
+                    padding: 0;
+                    margin: 0;
+                    line-height: normal;
+                    &.small{
+                        font-size: em(12);
+                    }
+                    display: block;
+                    width: 100%;
+                }
+                strong{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

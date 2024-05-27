@@ -1,0 +1,49 @@
+<!-- Form group - Slider de rango -->
+<div class="formGroup" [formGroup]="group">
+  <!-- Range slider -->
+  <div class="rangeSlider">
+      <!-- Bubble indicator -->
+      <span #bubble class="rangeSlider__bubbleIndicator">
+          <label>
+              {{ range }}
+          </label>
+      </span>
+      <!-- End -->
+      <!-- Range labels -->
+      <div class="rangeSlider__labels rangeSlider__labels--top">
+          <span class="rangeSlider__labels__label">
+              {{config.minValue}}
+          </span>
+          <span class="rangeSlider__labels__label">
+              {{config.maxValue}}
+          </span>
+      </div>
+      <!-- End -->
+      <!-- Range input -->
+      <input
+        #rangeElement
+        class="rangeSlider__input"
+        min="{{ config.minValue }}"
+        max="{{ config.maxValue }}"
+        step="{{ config.step }}"
+        value="{{ config.value }}"
+        [type]="config.inputType"
+        [formControlName]="config.name"
+        [name]="config.name"
+        [value]="config.value ? config.value : ''"
+      >
+      <!-- End -->
+      <!-- Range limits -->
+      <div class="rangeSlider__labels">
+          <span class="rangeSlider__labels__label">
+              Millones
+          </span>
+          <span class="rangeSlider__labels__label">
+              Millones
+          </span>
+      </div>
+      <!-- End -->
+  </div>
+  <!-- End -->
+</div>
+<!-- End -->

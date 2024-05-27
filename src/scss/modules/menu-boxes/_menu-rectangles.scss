@@ -1,0 +1,87 @@
+.listContentBox {
+    
+    &__subOptionTitleRegular {
+        display: inline-block;
+        width: calc(100% - 25px);
+        max-width: 480px;
+        text-align: left;
+        color: $negro-44;
+        font-size: em(14) !important;
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+
+    &__subOptionMenu{
+        display: inline-block;
+        width: calc(100% - 25px);
+        max-width: 480px;
+        padding: 16px;
+        border-radius: 6px;
+        margin: 10px 0;
+        background-color: rgba(0, 0, 0, 0.55);
+        background-blend-mode: overlay;
+        text-align: center;
+    
+        position: relative;
+        overflow: hidden;
+    
+        &:hover{
+            &::after{
+                transform: scale(1);
+            }
+            span{
+                img{
+                    transform: translateX(3px);
+                }
+            }
+        }
+        
+        &:after{
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition-duration: .3s;
+            transform: scale(1.1);
+            z-index: -1;
+        }
+        strong, span{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: .2px;
+            
+            color: #fff;
+        }
+        strong{
+            font-size: em(17) !important;
+            font-style: italic;
+        }
+        span{
+            width: auto;
+            font-size: em(15) !important;
+            
+            margin-top: 15px;
+            font-weight: 500;
+            font-style: italic;
+            img{
+                content: "";
+                width: 10px;
+                height: 10px;
+                margin-left: 5px;
+                transition-duration: .3s;
+            }
+        }
+        &--bck-center{
+            background-position: center center;
+            background-size: cover;
+        }
+    }
+}

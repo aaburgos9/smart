@@ -1,0 +1,11 @@
+<div class="date">
+  <small>{{ cloneData?.fecha | date: 'hh:mm:ss a' }}</small>
+</div>
+<h5 style="color: white;">{{ cloneData?.title }}</h5>
+<p *ngIf="dataProcessed">
+  {{ cloneData?.data | json }}
+</p>
+
+<br />
+
+<button (click)="copy(data?.data)">Copiar</button>

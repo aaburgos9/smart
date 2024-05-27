@@ -1,0 +1,9 @@
+<button [ngClass]="classButton" (click)="disableIf ? noClick() : click()" [disabled]='disableIf'
+[ngStyle]="{
+  opacity: disableIf ? 0.5 : 1,
+  cursor: disableIf ? 'not-allowed' : 'pointer'
+}">
+    <span [ngClass]="classLabel">
+        <ng-content select="[contenedor]"></ng-content>
+    </span>
+</button>

@@ -1,0 +1,67 @@
+<div class="dav-formElement" [formGroup]="group" *ngIf="!config.isHidden">
+  <label
+    *ngIf="config.label"
+    [htmlFor]="config.textfieldAccess"
+    class="dav-formElement__label"
+    >{{ config.label }}
+    <span
+      *ngIf="config.additionalLabel"
+      class="dav-formElement__additionalLabel"
+      >{{ config.additionalLabel }}</span
+    ></label
+  >
+  <div
+    [class]="validateInputClass(false)"
+    [ngClass]="{
+      'dav-textField__disabledState': isEditableField,
+      'dav-filledOut': isFilledOut
+    }"
+  >
+    <div class="dav-leftIconTextfield">
+      <img
+        class="dav-textField__innerIcon__icon"
+        src="{{ config.trailingIcon }}"
+        alt="innerIcon"
+        *ngIf="config.trailingIcon"
+      />
+    </div>
+    <div class="dav-leftIconTextfield"
+    *ngIf="config.icon ">
+      <img  class="icon-input"
+        src="./assets/icons/default-icons/{{config.icon}}.svg"
+      />
+  </div>
+    <input
+      #input
+      [formControlName]="config.name"
+      autocomplete="off"
+      [type]="type"
+      [attr.placeholder]="config.placeholder ? config.placeholder : null"
+      (keypress)="focusCaret($event)"
+      (keyup)="action($event)"
+      (input)="verifyInput()"
+      (blur)="action($event)"
+      [name]="config.name"
+      [form]="group"
+      [ccMaxLength]="config.maxValue ? config.maxValue : 40"
+      [ccRestrict]="config.restrict"
+      [attr.inputmode]="inputmode ? inputmode : null"
+      [value]="localInputValue"
+      [attr.disabled]="config.disabled ? config.disabled : null"
+      [id]="config.textfieldAccess"
+    />
+
+    <button
+      class="dav-textField__buttonAction"
+      name="davEditTextfield"
+      *ngIf="showIcon"
+      (click)="onActionTextfield(); onEmitButtonAction.emit()"
+    >
+      <img [src]="icon" alt="editar" />
+    </button>
+  </div>
+</div>
+
+<p *ngIf="config.directionHelper" class="dav-directionHelper">
+  {{ config.directionHelper }}
+</p>

@@ -1,0 +1,41 @@
+
+// =============================================================================
+// MediaQuery Breakpoints - mixin
+// =============================================================================
+
+$breakpoint-xs: 320px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xlg: 1280px;
+
+@mixin media($media) {
+  @if $media == xs {
+    @media (min-width: $breakpoint-xs) and (max-width: $breakpoint-sm) { @content; }
+  }
+  @else if $media == sm {
+    @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) { @content; }
+  }
+  @else if $media == md {
+    @media (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) { @content; }
+  }
+  @else if $media == lg {
+    @media (min-width: $breakpoint-lg) and (max-width: $breakpoint-xlg) { @content; }
+  }
+  @else if $media == xlg {
+    @media (min-width: $breakpoint-xlg) { @content; }
+  }
+  // Quitar al encontrar una solución definitiva al teclado
+  @else if $media == ios {
+    @supports (-webkit-touch-callout: none) {
+      @content;
+      /* CSS specific to iOS devices */ 
+   }
+  }
+  @else if $media == android {
+    @supports not (-webkit-touch-callout: none) {
+      @content;
+      /* CSS for other than iOS devices */
+   }
+  }
+}

@@ -1,0 +1,44 @@
+<div class="formGroup text__margin--top1" [formGroup]="group" [hidden]="config.isHidden" >
+  <label for="" class="formGroup__label">
+    <span> {{ config.label }} </span>
+    <div *ngIf="config.tooltip" class="tooltip">
+      <span class="tooltip__trigger tooltip__trigger--small">
+        <img [src]="config.tooltip.img"/>
+      </span>
+      <span class="tooltip__message tooltip__message--topMiddle" [innerHTML]="config.tooltip.text">
+        {{ config.tooltip.text }}
+      </span>
+    </div>
+  </label>
+  <div class="formGroup__flexRow formGroup__flexRow--alignLeft">
+    <div [ngClass]="{ columnsChecks: config.columns }" *ngFor="let item of config.checkButtons" [hidden]="item.hide">
+      <div class="checkboxContainer">
+        <input
+          [id]="item.name"
+          type="checkbox"
+          [name]="config.name"
+          (change)="setValue(item.value, $event.target.checked)"
+        />
+        <input [hidden]="true" [formControlName]="config.name" />
+
+        <div class="checkmark" ></div>
+        <span class="texto-variable" for="item.name" >
+          <!-- {{ item.label }} -->
+          <div id="textElement" (click)="setNameChkGroup(item.name)" [innerHtml]="item.label | passSecurityTrust: 'html'" [mbaasTaggingClick]="item.name"></div>
+        </span>
+
+        <div *ngIf="item.tooltip2" class="tooltip">
+          <span class="tooltip__trigger tooltip__trigger--small" [mbaasTaggingClick]="item.name+'Tooltip'"
+            ><img [src]="item.tooltip2.img"
+          /></span>
+          <span
+            class="tooltip__message tooltip__message--medium tooltip__message--middleLeft texto-variable"
+            [innerHTML]="item.tooltip2.text"
+          >
+            <!-- {{ config.tooltip.text }} -->
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

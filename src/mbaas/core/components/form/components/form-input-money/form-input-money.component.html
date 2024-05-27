@@ -1,0 +1,60 @@
+<div class="formGroup" [formGroup]="group"  [hidden]="config.isHidden">
+  <label for="form-input" class="formGroup__label">
+    <span>
+      {{ config.label }}
+    </span>
+    <div *ngIf="config.tooltip" class="tooltip">
+      <span class="tooltip__trigger tooltip__trigger--small" [mbaasTaggingClick]="config.name"
+        ><img [src]="config.tooltip.img"
+      /></span>
+      <span class="tooltip__message tooltip__message--topMiddle">
+        {{ config.tooltip.text }}
+      </span>
+    </div>
+  </label>
+  <div *ngIf="config.readonly">
+    <a
+      (click)="editField(config.disabled)"
+      title="Editar"
+      class="formGroup__innerButton"
+    >
+      <img src="./assets/img/icons/icon-edit.svg" alt="Editar" />
+    </a>
+  </div>
+  <input
+    *ngIf="config.mskMoney"
+    class="formGroup__input"
+    [readonly]="config.readonly"
+    [ngClass]="{ 'formGroup__input--error': validField() }"
+    (input)="setOnInput()"
+    [type]="config.inputType"
+    [placeholder]="config.placeholder"
+    [formControlName]="config.name"
+    [name]="config.name"
+    [value]="config.value ? config.value : ''"
+    [form]="group"
+    [ccMaxLength]="config.maxValue ? config.maxValue : 40"
+    [upperCase]="config.upperCase ? config.upperCase : false"
+    [specialChart]="config.specialChart ? config.specialChart : false"
+    [onlyLetters]="config.onlyLetters ? config.onlyLetters : false"
+    [ccRestrict]="config.restrict"
+    (blur)="changeMSK()"
+  />
+  <input
+    *ngIf="!config.mskMoney"
+    class="formGroup__input"
+    [readonly]="config.readonly"
+    [ngClass]="{ 'formGroup__input--error': validField() }"
+    (input)="setOnInput()"
+    [type]="config.inputType"
+    [placeholder]="config.placeholder"
+    [name]="config.name"
+    [value]="config.value ? config.value : ''"
+    [form]="group"
+    [ccMaxLength]="config.maxValue ? config.maxValue : 40"
+    [upperCase]="config.upperCase ? config.upperCase : false"
+    [specialChart]="config.specialChart ? config.specialChart : false"
+    [onlyLetters]="config.onlyLetters ? config.onlyLetters : false"
+    [ccRestrict]="config.restrict"
+  />
+</div>

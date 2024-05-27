@@ -1,0 +1,8 @@
+<div class="formContentCapt">
+<form [formGroup]="group">
+  <ngx-recaptcha2 #captchaElem
+     [siteKey]="captchaSiteKey"
+    [formControlName]="config.name">
+  </ngx-recaptcha2>
+</form>
+</div>

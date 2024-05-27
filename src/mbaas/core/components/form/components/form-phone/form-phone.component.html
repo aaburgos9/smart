@@ -1,0 +1,60 @@
+<div class="formGroup" [formGroup]="phoneFormGroup">
+  <label for="fecha-exped" class="formGroup__label">
+    <span>
+      {{ config.label }}
+    </span>
+    <ng-container *ngIf="config.textTooltip; else elseTemplate">
+      <div class="tooltip">
+        <span class="tooltip__trigger tooltip__trigger--small" [mbaasTaggingClick]="config.name"
+          ><img src="./assets/img/layout/icon-dv-asktooltip.svg"
+        /></span>
+        <span class="tooltip__message tooltip__message--topMiddle">
+          {{ config.textTooltip }}
+        </span>
+      </div>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <div class="tooltip" *ngIf="config.tooltip">
+        <span class="tooltip__trigger tooltip__trigger--small" [mbaasTaggingClick]="config.name">
+          <img src="{{config.tooltip.img}}"/>
+        </span>
+        <span class="tooltip__message tooltip__message--topMiddle">
+          {{ config.tooltip.text }}
+        </span>
+      </div>
+    </ng-template>
+    
+  </label>
+  <div class="formGroup__flexRow">
+    <span
+      class="formGroup__flexRow__separator formGroup__flexRow__separator--indicator"
+      >+57</span
+    >
+    <input
+      class="formGroup__input formGroup__input--alignCenter formGroup__flexRow__child"
+      [ngClass]="{ 'formGroup__input--error': fieldValidityOne }"
+      [formControlName]="firstInputConfig.name"
+      [placeholder]="firstInputConfig.placeholder"
+      [value]="firstInputConfig?.value ? firstInputConfig.value : ''"
+      [maxLength]="firstInputConfig.maxValue ? firstInputConfig.maxValue : 40"
+      (input)="specialCharsPattern($event, firstInputConfig.onlyLetters, firstInputConfig.onlyNumbers);validationField('one')"
+    />
+    <input
+      class="formGroup__input formGroup__input--alignCenter formGroup__flexRow__child"
+      [ngClass]="{ 'formGroup__input--error': fieldValidityTwo }"
+      [placeholder]="secondInputConfig.placeholder"
+      [formControlName]="secondInputConfig.name"
+      [value]="secondInputConfig?.value ? secondInputConfig.value : ''"
+      [maxLength]="secondInputConfig.maxValue ? secondInputConfig.maxValue : 40"
+      (input)="specialCharsPattern($event, secondInputConfig.onlyLetters, secondInputConfig.onlyNumbers);validationField('two')"
+    />
+    <input
+      class="formGroup__input formGroup__input--alignCenter formGroup__flexRow__child"
+      [formControlName]="thirdInputConfig.name"
+      [placeholder]="thirdInputConfig.placeholder"
+      [value]="thirdInputConfig?.value ? thirdInputConfig.value : ''"
+      [maxLength]="thirdInputConfig.maxValue ? thirdInputConfig.maxValue : 40"
+      (input)="specialCharsPattern($event, thirdInputConfig.onlyLetters, thirdInputConfig.onlyNumbers);"
+    />
+  </div>
+</div>

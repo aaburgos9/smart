@@ -1,0 +1,352 @@
+@import "../../../../../assets/styles/globals/_texts.scss";
+
+%btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  min-width: 216px;
+  max-width: 255px;
+  isolation: isolate;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: inherit;
+}
+
+.mbaas-button {
+  &__text {
+    cursor: pointer;
+    @extend %defaultFont;
+    font-size: var(--font-xxs);
+    text-align: center;
+
+    &--small {
+      @extend .mbaas-button__text;
+      @extend %defaultFont;
+      font-size: var(--font-xxxs);
+    }
+  }
+
+  &--primary {
+    @extend %btn;
+    background-color: var(--verde-00);
+    position: relative;
+    overflow: hidden;
+    @extend %defaultFont;
+    font-weight: var(--fw-bold);
+    color: #fff;
+    text-align: center;
+
+    &:hover {
+      background: var(--verde-900);
+    }
+
+    &:active {
+      &:after {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    > :nth-child(n) {
+      z-index: 1;
+    }
+
+    &:disabled {
+      background-color: var(--gris-003);
+      @extend %defaultFont;
+      font-weight: var(--fw-bold);
+      color: #838383;
+      text-align: center;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &--secondary {
+    @extend %btn;
+    @extend %defaultFont;
+    font-weight: var(--fw-bold);
+    color: var(--negro-00);
+    text-align: center;
+    background-color: initial;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      color: var(--negro-00);
+      background: #F1F2F8;
+    }
+
+    &:active {
+      &:after {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    > :nth-child(n) {
+      z-index: 1;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      @extend %defaultFont;
+      font-weight: var(--fw-bold);
+      color: #959393;
+      text-align: center;
+      cursor: not-allowed;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &--outline {
+    @extend %btn;
+    background-color: transparent;
+    border: 1px solid var(--negro-800);
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+    @extend %defaultFont;
+    font-weight: var(--fw-bold);
+    color: var(--negro-800);
+
+    &:hover {
+      border: 1px solid var(--negro-00);
+      color: var(--negro-00);
+      background: #F1F2F8;
+    }
+
+    &:active {
+      &:after {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    > :nth-child(n) {
+      z-index: 1;
+    }
+
+    &:disabled {
+      border: 1px solid #959393;
+      @extend %defaultFont;
+      font-weight: var(--fw-bold);
+      color: #959393;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &--pill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+    border-radius: 16px;
+    min-width: 136px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: var(--gris-007);
+    overflow: hidden;
+    @include prefix((box-shadow: 2px 2px 12px 0 rgba(166, 171, 189, 0.34)), webkit moz ms o);
+    @extend %defaultFont;
+    font-size: var(--font-xxxs);
+    font-weight: var(--fw-medium);
+    color: var(--negro-00);
+    text-align: center;
+
+    p {
+      margin-left: 8px;
+    }
+
+    img {
+      display: flex;
+      left: 40px;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      padding: 6px;
+      background-color: var(--gris-007);
+      border: 1px solid var(--gray-ef);
+      border-radius: 50px;
+    }
+
+    &:hover {
+      background-color: var(--gris-005);
+      box-shadow: none;
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &--iconLarge {
+    position: relative;
+    isolation: isolate;
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: var(--gris-007);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: solid 1px var(--white-ee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      border: solid 1px var(--gray-ba);
+    }
+
+    &:active {
+      background-color: var(--white-f0);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 58%;
+      cursor: not-allowed;
+      border: solid 1px var(--gray_f5);
+
+      &~.mbaas-button__text {
+        opacity: 58%;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &--iconSmall {
+    @extend .mbaas-button--iconLarge;
+    width: 24px;
+    height: 24px;
+    border: solid 1px var(--border-icon-button-small);
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--iconSimple {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    img {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      background-color: var(--gris-005);
+    }
+
+    &:active {
+      background-color: var(--gris-005);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 58%;
+      cursor: not-allowed;
+    }
+  }
+
+  &--back {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 4px 8px 4px 24px;
+    margin-right: 16px;
+    border-radius: 4px;
+    @extend %defaultFont;
+    color: var(--negro-900);
+    font-size: var(--font-xs);
+
+    &::before {
+      content: "";
+      background-image: url(../../../../../assets/icons/default-icons/icon-arrow-back.svg);
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      left: 0;
+    }
+
+    &:hover {
+      background-color: var(--gris-005);
+    }
+
+    &:active {
+      background-color: var(--gris-005);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 58%;
+      cursor: not-allowed;
+    }
+  }
+
+  &__ripple {
+    position: absolute;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    display: block;
+    margin: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background: rgba(40, 40, 40, 0.5);
+    transform: scale(0);
+    pointer-events: none;
+    animation: clickeffect 1s ease;
+    -webkit-animation: clickeffect 1s ease;
+  }
+}
+
+@keyframes clickeffect {
+  from {
+    opacity: 0.7;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@-webkit-keyframes clickeffect {
+  from {
+    opacity: 0.7;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>04-iconos/01-24x24_/Dialog Icons/Error</title>
+    <g id="HU93:-Abrir-cuenta-movil" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="006---Resultado-nuevo-cliente-seguro-no-exitoso----004M" transform="translate(-34.000000, -466.000000)">
+            <g id="Group-4" transform="translate(16.000000, 448.000000)">
+                <g id="Group" transform="translate(16.000000, 16.000000)">
+                    <g id="Shape-Mask" transform="translate(2.000000, 2.000000)">
+                        <g id="Mask" transform="translate(-0.000000, -0.000000)">
+                            <g id="Capa_6" transform="translate(-0.000000, 0.000000)" fill="#D5740E" fill-rule="nonzero">
+                                <path d="M10,1 C14.9705628,1 19,5.02943727 19,10 C19,14.9705628 14.9705628,19 10,19 C5.02943727,19 1,14.9705628 1,10 C1,5.02943727 5.02943727,1 10,1 M10,0 C4.47715252,0 0,4.47715252 0,10 C0,15.5228476 4.47715252,20 10,20 C15.5228476,20 20,15.5228476 20,10 C20,7.34783513 18.9464317,4.80429599 17.0710679,2.9289322 C15.1957041,1.05356841 12.652165,0 10,0 L10,0 Z" id="Shape"></path>
+                            </g>
+                            <g id="Group-3" transform="translate(4.000000, 2.000000)">
+                                <circle id="Oval" fill="#D5740E" cx="6" cy="13.75" r="1"></circle>
+                                <path d="M2.76022798,9.94800007 C2.56596765,9.94912839 2.37925312,9.87251201 2.24132922,9.7350753 C2.10297133,9.59721268 2.02514699,9.40954823 2.02514699,9.21377673 C2.02514699,9.01800523 2.10297133,8.83034078 2.24132922,8.69247816 L8.81891915,2.12852153 C9.10888875,1.87904948 9.54113427,1.89582247 9.81108517,2.16702184 C10.0810361,2.43822122 10.0977318,2.87246578 9.84940824,3.16377644 L3.31566891,9.77178647 C3.16282687,9.90531075 2.96168152,9.96912411 2.76022798,9.94800007 Z" id="Path" fill="#D5740E" fill-rule="nonzero" transform="translate(6.025147, 5.951970) scale(-1, -1) rotate(135.000000) translate(-6.025147, -5.951970) "></path>
+                            </g>
+                        </g>
+                        
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

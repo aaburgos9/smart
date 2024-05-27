@@ -1,0 +1,88 @@
+@import "../scss/globals/texts";
+@import "../scss/mixins";
+
+.smart-results {
+    padding: 16px 16px;
+    min-height: 70px;
+    min-width: 140px;
+    &__item {
+        position: relative;
+        border-bottom: 1px solid #cacaca;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+
+        &:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+
+        .smart-contentInfo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 120px;
+
+            &--flexTop {
+                @extend .smart-contentInfo;
+                align-items: baseline
+            }
+
+            &__info {
+                .smart-title {
+                    margin: 0;
+                    padding: 0;
+                    @extend %defaultFont;
+                    font-size: var(--font-medium);
+                    
+                }
+
+                .smart-description {
+                    @extend %defaultFont;
+                    color: var(--black-00);
+                    font-weight: var(--fw-bold);
+
+                    &--condensed {
+                        margin: 0;
+                        padding: 0;
+                        font-size: var(--font-medium);
+                        font-family: var(--roboto-condensed);
+                        font-weight: var(--fw-bold);
+                        color: var(--black-00);
+                        
+                    }
+                }
+
+                &--right {
+                    @extend .smart-contentInfo__info;
+                    .smart-contentInfo__heading {
+                        justify-content: flex-end;
+
+                    }
+                }
+            }
+
+            &__heading {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            &__icon {
+                img {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: transform 0.3s ease;
+                    opacity: 0.6;
+                }
+            }
+
+            &--cursor {
+                cursor: pointer;
+                width: 100%;
+                align-items: center;
+            }
+        }
+    }
+}

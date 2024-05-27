@@ -1,0 +1,17 @@
+@import '../globals/texts';
+//label para alineacion con input
+.smart-{
+  &formElement{
+      &__label{
+          margin-left: 8px;
+          @extend %defaultFont;
+          font-size: var(--font-medium);
+          font-weight: var(--fw-medium);
+
+          .opcional{
+            font-size: 11px;
+            font-weight: var(--fw-regular);
+          }
+      }
+  }
+}

@@ -1,0 +1,217 @@
+@import '../../../src/scss/mixins';
+@import '../../../src/scss/globals/texts';
+
+.smart-contModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 3, 3, 0.6);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  opacity: 1;
+  pointer-events: inherit;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+
+  .smart-modal {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    --padingH: 24px;
+    padding: var(--padingH) 24px;
+    min-width: 310px;
+    max-width: 300px;
+    height: auto;
+    max-height: 94vh;
+    background: #ebecf0;
+    margin: 0 auto;
+    border-radius: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 0.3s;
+
+
+    .smart-modalHeader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+
+      .smart-modalIcon {
+        display: inline-block;
+        margin: 0px auto;
+        margin-bottom: 16px;
+
+        &__img {
+          max-width: 60px;
+        }
+      }
+
+      .smart-modalInfo {
+        &__title {
+          font-size: clamp(1.8rem, 1vw + 1rem, 1.8rem);
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+    }
+
+    .smart-modalBody {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      .smart-modalInfo {
+        &__description {
+          margin-top: 8px;
+          @extend %defaultFont;
+          font-size: var(--font-small);
+        }
+      }
+
+      //quita la margen inferior al ultimo elemento hijo
+      &>* {
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+.hiddenModal{
+  opacity: 0;
+  pointer-events: none;
+
+  .smart-modal {
+    top: 0;
+  }
+}
+
+.smart-modalLoader {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin-bottom: 16px;
+  .smart-modalLoader__clock {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2.9px solid var(--green-primary);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    //Hour
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      background-color: var(--green-primary);
+      width: 3.5px;
+      height: 13px;
+      top: 20px;
+      left: 20px;
+      border-radius: 100px;
+      @include prefix(
+        (
+          transform-origin: 50% 0,
+          animation: hour 60s linear infinite,
+        ),
+        webkit moz ms o
+      );
+    }
+    //Minutes
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      background-color: var(--green-primary);
+      width: 3.5px;
+      height: 17px;
+      top: 20px;
+      left: 20px;
+      border-radius: 100px;
+
+      @include prefix(
+        (
+          transform-origin: 50% 0,
+          animation: minutes 10s linear infinite,
+        ),
+        webkit moz ms o
+      );
+    }
+  }
+}
+
+@include keyframes(hour) {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+}
+
+@include keyframes(minutes) {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(540deg);
+    transform: rotate(540deg);
+  }
+}
+.smart-buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 24px;
+
+}
+
+.formatText {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+.buttonCustom{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    font-style: normal;
+    color: rgb(255 255 255);
+    background-color: rgb(225 17 28);
+    margin: 0 5px;
+    padding: 0 22px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: inherit;
+    width: auto;
+    min-width: 144px;
+}
+p.text__align--center.text__weight--regular.text__color--dark.formatText {
+  font-size: clamp(1.2rem, 1vw + 0.6rem, 1.4rem);
+}

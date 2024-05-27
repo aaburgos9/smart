@@ -1,0 +1,76 @@
+//Helper icon text
+
+//contenedor
+.smart- {
+  &helper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 8px;
+    &__icon {
+      //margin-top: 4px;
+      margin-left: 9px;
+      margin-right: 7px;
+    }
+    &__text {
+      position: relative;
+      @extend %defaultFont;
+      font-size: var(--font-small);
+      color: var(--text-helper);
+
+      &--truncateText {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    &__contentBox {
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+    &--type2 {
+      @extend .smart-helper;
+      background-color: var(--white-fa);
+      border-radius: 8px;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+      overflow: hidden;
+      margin: 0 0 8px 0;
+      .smart-helper__text {
+        @extend %defaultFont;
+        color: var(--text-color);
+      }
+      .smart-helper__contentBox {
+        border-radius: 8px;
+        padding: 8px 16px;
+      }
+    }
+
+    &--showMore {
+      @extend .smart-helper;
+      flex-direction: column;
+
+      .smart- {
+        &helper {
+          &__more {
+            @extend .smart-helper__text;
+            text-decoration: underline;
+            cursor: pointer;
+            @extend %defaultFont;
+            font-weight: var(--fw-medium);
+          }
+        }
+      }
+      .viewContent {
+        -webkit-line-clamp: initial;
+      }
+    }
+  }
+}
+
+.show {
+  max-height: 900px;
+  transition: max-height 0.3s ease;
+}

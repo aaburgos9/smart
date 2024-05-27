@@ -1,0 +1,15 @@
+.mbaas-buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &--horizontal {
+    @extend .mbaas-buttonContainer;
+    flex-direction: row;
+  }
+  &--vertical {
+    @extend .mbaas-buttonContainer;
+    flex-direction: column;
+  }
+}

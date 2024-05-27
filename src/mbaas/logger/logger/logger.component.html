@@ -1,0 +1,20 @@
+<ng-container *ngIf="isLogger">
+  <div class="logger-container">
+    <div class="rectangulo rotar">
+      <strong>L</strong>
+    </div>
+
+    <h3 style="color: white;">Log</h3>
+    <select (change)="onChange($event)">
+      <option *ngFor="let key of keys" [value]="key">{{key}}</option>
+    </select>
+    <div class="loggerItem" *ngIf="loadObserData">
+      <textarea name="" id="" cols="30" rows="10">
+        {{ dataObser | json }}
+      </textarea>
+    </div>
+    <div class="loggerItem" *ngFor="let item of log">
+      <mbaas-logger-item [data]="item"></mbaas-logger-item>
+    </div>
+  </div>
+</ng-container>

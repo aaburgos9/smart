@@ -1,0 +1,128 @@
+{
+  "data": {
+    "pais": [
+      {
+        "codigo": "999",
+        "nombre": "OTRO",
+        "departamento": []
+      },
+      {
+        "codigo": "200",
+        "nombre": "OTRO",
+        "departamento": []
+      },
+      {
+        "codigo": "169",
+        "nombre": "COLOMBIA",
+        "departamento": [
+          {
+            "codigo": "16925",
+            "nombre": "CUNDINAMARCA",
+            "ciudad": [
+              {
+                "categoria": "4",
+                "codigo": "16925001",
+                "nombre": "AGUA DE DIOS",
+                "nombreCategoria": "Rurales",
+                "municipio": [
+                  {
+                    "codigo": "16925001000",
+                    "nombre": "AGUA DE DIOS"
+                  },
+                  {
+                    "codigo": "16925001002",
+                    "nombre": "LETICIA"
+                  },
+                  {
+                    "codigo": "16925001003",
+                    "nombre": "LA PUNA"
+                  }
+                ]
+              },
+              {
+                "categoria": "4",
+                "codigo": "16925019",
+                "nombre": "ALBAN-CUNDINAMARCA",
+                "nombreCategoria": "Rurales",
+                "municipio": [
+                  {
+                    "codigo": "16925019000",
+                    "nombre": "ALBAN"
+                  },
+                  {
+                    "codigo": "16925019001",
+                    "nombre": "CHIMBE(DANUBIO)"
+                  },
+                  {
+                    "codigo": "16925019002",
+                    "nombre": "PANTANILLO"
+                  },
+                  {
+                    "codigo": "16925019003",
+                    "nombre": "LA MARIA"
+                  }
+                ]
+              },
+              {
+                "categoria": "4",
+                "codigo": "16925035",
+                "nombre": "ANAPOIMA",
+                "nombreCategoria": "Rurales",
+                "municipio": [
+                  {
+                    "codigo": "16925035000",
+                    "nombre": "ANAPOIMA"
+                  },
+                  {
+                    "codigo": "16925035001",
+                    "nombre": "LA PAZ"
+                  },
+                  {
+                    "codigo": "16925035002",
+                    "nombre": "SAN ANTONIO"
+                  },
+                  {
+                    "codigo": "16925035003",
+                    "nombre": "PATIO BONITO"
+                  }
+                ]
+              },
+              {
+                "categoria": "4",
+                "codigo": "16925040",
+                "nombre": "ANOLAIMA",
+                "nombreCategoria": "Rurales",
+                "municipio": [
+                  {
+                    "codigo": "16925040000",
+                    "nombre": "ANOLAIMA"
+                  },
+                  {
+                    "codigo": "16925040002",
+                    "nombre": "LA FLORIDA"
+                  },
+                  {
+                    "codigo": "16925040003",
+                    "nombre": "REVENTONES"
+                  },
+                  {
+                    "codigo": "16925040004",
+                    "nombre": "CANAZEJAS"
+                  },
+                  {
+                    "codigo": "16925040005",
+                    "nombre": "BOQUERON DE ILO"
+                  },
+                  {
+                    "codigo": "16925040006",
+                    "nombre": "CORRALEJAS"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

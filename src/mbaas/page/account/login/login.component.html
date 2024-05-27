@@ -1,0 +1,34 @@
+
+<main class="smart-container ">
+  <mbass-mobile-layout [buttonSmart]="true" [buttonHead]="true" [buttonContent]="true">
+    <div head>
+
+      <h2 class="title-white">SMART JUNGLE</h2>
+    </div>
+    <div class="smart-formContainer" content>
+
+      <mbaas-content-box [padding]="16">
+
+        <mbaas-form-container #FormLogin [config]="inputLogin">
+        </mbaas-form-container>
+
+      <div class="pt-32px pl-24px fz-16px">
+        <p>Aun no tiene cuenta  <a  (click)="gotoRegistration()" style="font-weight: 500 !important;color: blue !important;">Registrese Aqui</a></p>
+      </div>
+        <div class="pt-32px">
+          <mbaas-button-container>
+            <mbaas-button [disabled]="disableButton" (click)="onCall(getDataToLogin())"> Iniciar sesión</mbaas-button>
+          </mbaas-button-container>
+        </div>
+      </mbaas-content-box>
+    </div>
+
+    <div footer>
+    </div>
+    <div class="links">
+      <a>Si aún no tienes Cuenta </a>
+      <a href="#"> Registrate Aqui</a>
+    </div>
+  </mbass-mobile-layout>
+</main>
+

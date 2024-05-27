@@ -1,0 +1,125 @@
+
+/**
+ * Modules - Clock type loader
+ */
+
+ .clockLoader
+ {
+     border-radius: 50%;
+     border: 6px solid white;
+     height: 150px;
+     width: 150px;
+     position: relative;
+     margin: 0 auto;
+     &:after
+     {
+         content: "";
+         position: absolute;
+         background-color: white;
+         top: 70px;
+         left: 70px;
+         height: 50px;
+         width: 6px;
+         border-radius: 4px;
+         @include prefix((
+             transform-origin: 50% 0,
+             animation: grdAiguille 5s linear infinite
+         ), webkit moz o ms);
+     }
+     &:before
+     {
+         content: "";
+         position: absolute;
+         background-color: white;
+         top: 70px;
+         left: 70px;
+         height: 40px;
+         width: 6px;
+         border-radius: 4px;
+         @include prefix((
+             transform-origin: 50% 0,
+             animation: ptAiguille 96s linear infinite
+         ), webkit moz o ms);
+     }
+     &__numeral
+     {
+         height: 17px;
+         width: 5px;
+         border-radius: 5px;  
+         background-color: white;
+         position: absolute;
+         top: -5px;
+         left: 0;
+         right: 0;
+         margin: 0 auto;
+         &:before
+         {
+             content: '';
+             height: 17px;
+             width: 5px;
+             border-radius: 5px;  
+             background-color: white;
+             position: absolute;
+             left: 0;
+             right: 0;
+             margin: 0 auto;
+             top: 130px;
+         }
+         &--vertical
+         {
+             top: 61px;
+             right: -130px;
+             @include prefix((
+                 transform: rotate(90deg),
+             ), webkit moz o ms);
+         }
+     }
+ }
+ 
+ @-webkit-keyframes grdAiguille
+ {
+     0%{-webkit-transform:rotate(0deg);}
+     100%{-webkit-transform:rotate(360deg);}
+ }
+ 
+ @keyframes grdAiguille
+ {
+     0%{transform:rotate(0deg);}
+     100%{transform:rotate(360deg);}
+ }
+ 
+ @-webkit-keyframes ptAiguille
+ {
+     0%{-webkit-transform:rotate(0deg);}
+     100%{-webkit-transform:rotate(360deg);}
+ }
+ 
+ @keyframes ptAiguille
+ {
+     0%{transform:rotate(0deg);}
+     100%{transform:rotate(360deg);}
+ }
+ 
+ .loaderTitle
+ {
+     font-size: 1.1em;
+     color: white;
+     margin-bottom: em(30);
+     strong
+     {
+         color: $rojo !important;
+         font-weight: bold;
+     }
+ }
+ 
+ .loaderSubTitle
+ {
+     font-size: 0.9em;
+     color: white;
+     margin-top: em(38);
+     strong
+     {
+         color: $rojo !important;
+         font-weight: bold;
+     }
+ }

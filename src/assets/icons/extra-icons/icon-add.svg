@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>04-iconos/01-24x24_/General icons/Asistente Virtual</title>
+    <defs>
+        <path d="M8,0 C8.98183956,0 9.77777778,0.7163444 9.77777778,1.6 L9.777,6.222 L14.4,6.22222222 C15.2371474,6.22222222 15.9241319,6.93658229 15.994127,7.84660653 L16,8 C16,8.98183956 15.2836556,9.77777778 14.4,9.77777778 L9.777,9.777 L9.77777778,14.4 C9.77777778,15.2371474 9.06341771,15.9241319 8.15339347,15.994127 L8,16 C7.01816044,16 6.22222222,15.2836556 6.22222222,14.4 L6.222,9.777 L1.6,9.77777778 C0.76285259,9.77777778 0.0758681396,9.06341771 0.00587295489,8.15339347 L0,8 C0,7.01816044 0.7163444,6.22222222 1.6,6.22222222 L6.222,6.222 L6.22222222,1.6 C6.22222222,0.76285259 6.93658229,0.0758681396 7.84660653,0.00587295489 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="A004-SolicitarProducto-005" transform="translate(-172.000000, -712.000000)">
+            <g id="Bottom-Nav" transform="translate(0.000000, 700.000000)">
+                <g id="Main-item" transform="translate(160.000000, 0.000000)">
+                    <g id="Mask" transform="translate(12.000000, 12.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Combined-Shape" fill="#F3F3F4" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

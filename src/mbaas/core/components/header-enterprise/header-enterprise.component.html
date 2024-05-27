@@ -1,0 +1,15 @@
+<div class="containerMain">
+  <div class="smart-headerEnterprise" [ngStyle]="{'background': 'linear-gradient(90deg,' + headerColor1 + ' 5%, ' + headerColor2+ ' 100%)'}">
+    <div class="smart-headerEnterprise__leftContent">
+      <button class="smart-arrowBack"  [ngClass]="{'smart-arrowBack--show': showArrow, 'smart-arrowBack': !showArrow}" type="button" (click)="callClosePostmessage()">
+        <img src="{{iconArrowBack}}" alt="">
+      </button>
+      <h1 class="smart-titleHeader">{{title}}</h1>
+    </div>
+    <div class="smart-headerEnterprise__rightContet">
+      <button class="smart-closeBtn" type="button" (click)="callClosePostmessage()">
+        <img src="{{closeBtn}}" alt="">
+      </button>
+    </div>
+  </div>
+</div>

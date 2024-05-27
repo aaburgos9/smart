@@ -1,0 +1,163 @@
+
+/**
+* Modules - forms - radiobutton
+*/
+
+/* Customize the label (the radiobuttonContainer) */
+.radiobuttonContainer {
+	position: relative;
+	user-select: none;
+	margin: 0 0 0 em(14);
+	font-size: 13px;
+	font-weight: 200;
+	line-height: normal;
+	background-color: transparent;
+	padding: 0 ;
+	&--latLine
+	{
+		&:nth-child(1)
+		{
+			border-right: solid 1px gray;
+		}
+	}
+	&:nth-child(1)
+	{
+		margin-left: 0;
+	}
+	@include prefix((
+		appearance: none,
+		box-sizing: border-box,
+		display: flex,
+		justify-content: flex-start,		
+		align-items: center,
+		user-select: none
+	), webkit moz o ms);
+	&--naked
+	{
+		margin: 0 0 0 em(20);
+		width: auto !important;
+		@include prefix((
+			justify-content: flex-start !important,
+		), webkit moz o ms);
+	}
+	&__label
+	{
+		width: 100%;
+		padding: 0 em(14);
+		font-weight: normal;
+		color: $gris-3a;
+		font-size: em(14);
+		@include prefix((
+			flex: 1,		
+		), webkit moz o ms);
+		&--naked
+		{
+			background-color: transparent;
+			padding: 0 em(5);
+			@include prefix((
+				display: flex,
+			), webkit moz o ms);
+		}
+		&--canguro
+		{
+			background-color: transparent;
+			padding: 0 em(5);
+			@include prefix((
+				display: flex,
+				flex-direction: column,
+				align-items: flex-start,
+				justify-content: flex-start
+			), webkit moz o ms);
+			span
+			{
+				font-size: 1.1em;
+				small
+				{
+					font-size: 0.8em;
+					font-weight: lighter;
+				}
+			}
+		}
+	}
+}
+
+// Fix para canguro
+.radioContainerCanguro
+{
+	.formGroup__flexRow
+	{
+		width: 100%;
+		margin-top: 0 !important;
+		@include prefix((
+			justify-content: center !important,
+			align-items: center !important,
+			flex-wrap: wrap !important,
+		), webkit moz o ms);
+		.radiobuttonContainer 
+		{
+			border-right: solid 2px #cecece;
+			margin: 0 em(10) 0 0;
+			padding: 0 em(10) 0 0;
+			min-width: 25%;
+			&:last-of-type
+			{
+				margin: 0 !important;
+				padding: 0 !important;
+				border: none;
+			}
+		}
+	}
+}
+
+/* Hide the browser's default checkbox */
+input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	z-index: 10;
+	cursor: pointer;
+	height: 100%;
+	width: 21px;
+	top: 0;
+	left: 0;
+}
+
+/* Create a custom checkbox *//* Create a custom radio button */
+.radiobtn 
+{
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 21px;
+	width: 21px;
+	background-color: white !important;
+	border-radius: 50%;
+	border: solid 1px rgba($color: $gris-cc, $alpha: 0.7);
+}
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .radiobtn:after 
+{
+	content: "";
+	position: absolute;
+	display: none;
+}
+  
+  /* Show the indicator (dot/circle) when checked */
+  input:checked ~ .radiobtn:after 
+{
+	display: block;
+}
+  
+  /* Style the indicator (dot/circle) */
+  .radiobtn:after 
+{
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto auto;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: $rojo;
+}

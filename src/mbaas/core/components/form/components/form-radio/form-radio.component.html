@@ -1,0 +1,29 @@
+<div class="formGroup" [formGroup]="group" [hidden]="config.isHidden">
+  <label for="" class="formGroup__label">
+    <span>
+      {{ config.label }}
+    </span>
+  </label>
+  <div class="formGroup__flexRow formGroup__flexRow--alignLeft">
+    <div class="radiobuttonContainer" *ngFor="let item of config.radioButtons" [mbaasTaggingClick]="config.name" [mbaasTaggingValue]="item.label">
+      <input
+        [id]="item.name"
+        type="radio"
+        [name]="config.name"
+        [value]="item.value"
+        [formControlName]="config.name"
+      />
+      <div class="radiobtn"></div>
+      <span
+        class="radiobuttonContainer__label radiobuttonContainer__label--naked"
+        [innerHTML]="item.label"
+      ></span>
+    </div>
+  </div>
+  <div *ngIf="config.tooltip" class="formGroup__helper">
+    <p class="formGroup__helper__text" [ngClass]="{'formGroup__helper__textLong--full-text': seeMore, 'formGroup__helper__textLong': config.seeMoreText}">
+      {{ config.tooltip.text }}
+    </p>
+    <span *ngIf="config.seeMoreText" class="formGroup__helper__text formGroup__helper__viewmore" (click)="toogleText()" [mbaasTaggingClick]="config.name+'SeeMore'">{{seeMoreText}}</span>
+  </div>
+</div>

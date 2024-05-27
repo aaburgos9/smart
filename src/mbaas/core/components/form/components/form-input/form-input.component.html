@@ -1,0 +1,90 @@
+<div class="formGroup" [formGroup]="group"  [hidden]="config.isHidden">
+  <label for="form-input" class="formGroup__label">
+    <span>
+      <!-- {{ config.label }} -->
+      <div id="textElement" [innerHtml]="config.label | passSecurityTrust: 'html'"></div>
+    </span>
+    <div *ngIf="config.tooltip" class="tooltip" >
+      <span class="tooltip__trigger tooltip__trigger--small"
+        ><img [src]="config.tooltip.img"
+      /></span>
+      <span class="tooltip__message tooltip__message--topMiddle">
+         {{ config.tooltip.text }}
+      </span>
+    </div>
+  </label>
+  <div class="tooltip tooltip--lateral" *ngIf="config.textTooltip">
+      <span class="tooltip__trigger tooltip__trigger--innerInput">
+        <img [src]="'assets/img/layout/icon-dv-asktooltip.svg'">
+      </span>
+      <span class="tooltip__message tooltip__message--small tooltip__message--middleLeft">
+          {{ config.textTooltip }}
+      </span>
+  </div>
+  <div *ngIf="config.readonly && config.inputType !== 'date'">
+    <a
+      (click)="editField(config.disabled)"
+      title="Editar"
+      class="formGroup__innerButton"
+    >
+      <img
+        src="./assets/img/icons/icon-edit.svg"
+        alt="Editar"
+      />
+    </a>
+  </div>
+  <div *ngIf="!config.readonly && config.inputType === 'date'">
+    <a [mbaasTaggingClick]="config.name+'Editar'"
+      (click)="editField(true)"
+      title="Editar2"
+      class="formGroup__innerButton"
+    >
+      <img
+        src="./assets/img/icons/icon-edit.svg"
+        alt="Editar"
+      />
+    </a>
+  </div>
+  <div *ngIf="config.icon ">
+      <img  class="icon-input"
+        src="./assets/icons/default-icons/{{config.icon}}.svg"
+      />
+  </div>
+  <input *ngIf="config.restrict"
+    class="formGroup__input"
+    id="{{ config.name }}"
+    [readonly]="config.readonly"
+    [ngClass]="{'formGroup__input--error': validField(),'formGroup__input--alignCenter formGroup__input--medium': config.inputType === 'otp'}"
+    [type]="config.inputType"
+    [placeholder]="config.placeholder"
+    [formControlName]="config.name"
+    [name]="config.name"
+    [value]="config.value ? config.value : ''"
+    [form]="group"
+    [ccMaxLength]="config.maxValue ? config.maxValue : 40"
+    [upperCase]="config.upperCase ? config.upperCase : false"
+    [specialChart]="config.specialChart ? config.specialChart : false"
+    [onlyLetters]="config.onlyLetters ? config.onlyLetters : false"
+    [ccRestrict]="config.restrict"
+    (input)="inputState();"
+  />
+  <input *ngIf="!config.restrict"
+  class="formGroup__input"
+  id="{{ config.name }}"
+  [readonly]="config.readonly"
+  [ngClass]="{ 'formGroup__input--error': fieldValidity }"
+  [type]="config.inputType"
+  [placeholder]="config.placeholder"
+  [formControlName]="config.name"
+  [name]="config.name"
+  [value]="config.value ? config.value : ''"
+  [form]="group"
+  [ccMaxLength]="config.maxValue ? config.maxValue : 40"
+  [upperCase]="config.upperCase ? config.upperCase : false"
+  [specialChart]="config.specialChart ? config.specialChart : false"
+  [onlyLetters]="config.onlyLetters ? config.onlyLetters : false"
+  (input)="inputState();specialCharsPattern($event, config.onlyLetters, config.onlyNumbers);"
+  mbaasTaggingBlur="true" [mbaasTaggingClick]="config.name" [mbaasTaggingBlurValue]="taggingValue"
+/>
+<p *ngIf="config.showErrorLabel" class="errorLabel">{{config.errorLabel}}</p>
+</div>

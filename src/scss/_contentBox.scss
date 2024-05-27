@@ -1,0 +1,75 @@
+//Container Box - Shadows - Padding - Background
+%standardContent {
+    position: relative;
+    width: calc(100% - 16px);
+    margin: 0 auto;
+    transition-duration: 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  %neoShadow {
+    box-shadow: 5px 5px 10px rgba(166, 171, 189, 0.48),
+      -5px -5px 10px rgba(250, 251, 255, 1);
+  }
+  
+  %topLineColor {
+    @extend .smart-contentBox;
+    margin-top: 16px;
+    &::before {
+      content: "";
+      display: inline-block;
+      height: 8px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 8px 8px 0px 0px;
+    }
+  }
+  
+  .smart-contentBox {
+    min-height: 140px;
+    min-width: 290px;
+    width: 100%;
+    @extend %standardContent;
+    border-radius: 8px;
+    padding: 0px 15px 16px;
+    background-color: var(--background-contextBox);
+    &--large {
+      @extend .smart-contentBox;
+      border-radius: 16px;
+    }
+  }
+  
+  .topColor {
+    &--red {
+      @extend %topLineColor;
+      padding-top: 24px;
+      &::before {
+        background: linear-gradient(
+          90deg,
+          rgba(135, 4, 18, 1) 0%,
+          rgba(225, 17, 28, 1) 100%
+        );
+      }
+    }
+    &--black {
+      @extend %topLineColor;
+      &::before {
+        background: linear-gradient(
+          90deg,
+          rgba(22, 22, 22, 1) 0%,
+          rgba(75, 71, 71, 1) 100%
+        );
+      }
+    }
+  
+    &--none {
+      @extend %topLineColor;
+      margin-top: 0;
+      width: 100%;
+      padding: 0;
+    }
+  }
+  

@@ -1,0 +1,70 @@
+//============ Defaut Fonts Properties ============
+
+//How to use defaultFont
+/*
+  p{  
+      @include defaultFont([Se pueden incluir variables o dejar vacio]);
+
+      @include defaultFont($fz: 16px, $fw: bold, $lh: 18px, $ta: center);
+
+      $fz: -> [Property] -> font-size
+      $fw: -> [Property] -> font-weight
+      $lh: -> [Property] -> line-height
+      $ta: -> [Property] -> text-align
+      $c:  -> [Property] -> color
+  }
+*/
+
+@mixin defaultFont(
+  $ff: $bodyFont__family,
+  $fz: $font__size*1px,
+  $fw: normal,
+  $lh: 'LhInitial',
+  $ta: left,
+  $c: $negro-57
+) {
+  $FzContent: inspect($fz);
+  @if ends-with($FzContent, 'px') {
+    @if $lh == 'LhInitial' {
+      $lh: $fz + 2;
+    }
+  } @else {
+    @if $lh == 'LhInitial' {
+      $lh: initial;
+    }
+  }
+
+  //Normal properties
+  font-family: $ff;
+  font-size: $fz;
+  line-height: $lh;
+  font-weight: $fw;
+  text-align: $ta;
+  color: $c;
+}
+
+//Funcion parar encontrar caracteres de un string
+@function ends-with($string, $find) {
+  @if (
+    str-index($string, $find) == (str-length($string) - str-length($find) + 1)
+  ) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+//============ Lighten ============
+//How to use lighten
+/*
+  color: lighten([color],[porcentaje])
+  p{
+      color: lighten($text-color, 50%);
+  }
+*/
+
+//============ End Lighten ============
+
+@function lighten($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}

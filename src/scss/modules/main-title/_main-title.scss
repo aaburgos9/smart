@@ -1,0 +1,137 @@
+
+/**
+ * Modules - main title
+ */
+
+.mainTitle
+{
+    width: 100%;
+    margin: 0;
+    @include media(lg)
+    {
+        margin: em(14) 0;
+    }
+    @include media(xlg)
+    {
+        margin: em(14) 0;
+    }
+    &--isHiddenMobile
+    {
+        display: none;
+        @include media(lg)
+        {
+            display: block;
+        }
+        @include media(xlg)
+        {
+            display: block;
+        }
+    }
+    &--naked
+    {
+        margin: 0;
+        padding: 0;
+        h3
+        {
+            margin: 0 auto em(14) auto !important;
+        }
+    }
+    h2
+    {
+        font-size: 1.2em;
+    }
+    h3
+    {
+        font-size: 1.1em;
+        line-height: 1.3em;
+        margin: 0 auto;
+        font-weight: 100;
+        color: $negro-57;
+        &.bold
+        {
+            font-size: 0.95em !important;
+            line-height: 1.2em !important;
+            font-weight: 500 !important;
+        }
+    }
+    &__stepsCounter
+    {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        @include prefix((
+            box-sizing: border-box,
+            display: flex,
+            justify-content: center,
+            align-items: center,
+        ), webkit moz o ms);
+        &--secondary
+        {
+            margin-top: em(14);
+            .step
+            {
+                background-color: $gris-cc !important;
+                margin: 0 3px !important;
+                width: 20px !important;
+                height: em(3.3) !important;
+                border-radius: em(1.65) !important;
+                &:before
+                {
+                    display: none;
+                }
+            }
+        }
+        .step {
+            background-color: $gris-93;
+            width: 30px;
+            height: 30px;
+            color: white;
+            margin-right: 33px;
+            position: relative;
+            font-size: 0.8em;
+            @include prefix((
+                border-radius: 50%,
+                box-sizing: border-box,
+                display: flex,
+                justify-content: center,
+                align-items: center,
+            ), webkit moz o ms);
+            &:before
+            {
+                content: '';
+                top: 0;
+                bottom: 0;
+                right: 35px;
+                width: 23px;
+                height: 3px;
+                border-radius: 2px;
+                background-color: $gris-93;
+                margin: auto 0;
+                position: absolute;
+                z-index: 0;
+            }
+            &:first-child
+            {
+                &:before
+                {
+                    display: none;
+                }
+            }
+            &:last-child
+            {
+                margin-right: 0;
+            }
+            &--active
+            {
+                background-color: $rojo !important;
+                &:before
+                {
+                    background-color: $rojo;
+                }
+            }
+            @include media(md){
+                font-size: 30px;
+            }
+        }
+    }
+}

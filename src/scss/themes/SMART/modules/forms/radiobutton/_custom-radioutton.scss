@@ -1,0 +1,61 @@
+
+/**
+* Modules - forms - radiobutton
+*/
+
+/* Customize the label (the radiobuttonContainer) */
+.radiobuttonContainer {
+	padding: 0;
+	&__label
+	{
+		font-size: em(15);
+		text-align: justify;
+		color: rgba($gris-70, 0.7);
+		font-weight: lighter;
+	}
+}
+
+/* Create a custom checkbox *//* Create a custom radio button */
+.radiobtn 
+{
+	border-radius: 4px;
+	border: solid 2px rgba($color: $gris-cc, $alpha: 0.7);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+  
+/* Style the indicator (dot/circle) */
+.radiobtn:after 
+{
+	content: "";
+	position: absolute;
+	display: none;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	margin: auto auto;
+	background: transparent;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+
+/* Show the indicator (dot/circle) when checked */
+input:checked ~ .radiobtn:after 
+{
+	display: block;
+	transform: rotate(45deg);
+	height: 10px;
+	width: 6px;
+	border-bottom: 3px solid $verde-check;
+	border-right: 3px solid $verde-check;
+	border-radius: 3px;
+	margin-bottom: 4px;
+}
+
+input:checked ~ .radiobtn 
+{
+	border-color: $verde-check;
+}

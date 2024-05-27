@@ -1,0 +1,162 @@
+// @import '../../../assets/styles/_mixins.scss';
+@import '../../../../../../assets/styles/globals/_texts.scss';
+
+%textFieldGeneral {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid var(--gris-003);
+  border-radius: 8px;
+  background-color: var(--gris-007);
+  color: var(--negro-800);
+  font-size: 16px;
+  font-weight: 400;
+
+  transition: all .2s ease;
+
+  input:disabled {
+    background-color: var(--background-disabled);
+    color: var(--text-disabled);
+    cursor: not-allowed;
+    background-color: var(--background-disabled);
+  }
+
+  &::placeholder {
+    color: var(--gray-6765);
+  }
+
+  &:focus {
+    @extend .dav-filledOut;
+  }
+
+  &:-ms-reveal,
+  &:-ms-clear {
+    display: none;
+  }
+}
+
+.dav-textField {
+  @extend %textFieldGeneral;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+  }
+
+  &__disabledState {
+    @extend .dav-textField;
+    background-color: var(--background-disabled);
+    color: var(--text-disabled);
+    cursor: not-allowed;
+    border: 1px solid var(--border-disabled);
+    background-color: var(--background-disabled);
+  }
+
+  &__disabled {
+    @extend .dav-textField;
+    background-color: var(--background-disabled);
+    color: var(--text-disabled);
+    cursor: not-allowed;
+    border: 1px solid var(--border-disabled);
+    background-color: var(--background-disabled);
+  }
+
+
+  &__invalidField {
+    @extend %textFieldGeneral;
+
+    input {
+      width: 100%;
+    }
+    @include prefix((border: 1px solid var(--rojo-900),
+        appearance: none,
+      ), webkit moz ms o);
+  }
+
+  &__buttonAction {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    position: absolute;
+    opacity: 0.8;
+    right: 8px;
+    bottom: 0;
+
+    img {
+      display: inline-block;
+      width: auto;
+      cursor: pointer;
+    }
+  }
+
+  &__edit {
+    @extend %textFieldGeneral;
+    position: relative;
+    padding: 8px 40px 8px 8px;
+  }
+
+  &__trailingIcon {
+    @extend %textFieldGeneral;
+    position: relative;
+    padding: 8px 40px 8px 40px;
+
+    &__icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__password {
+    input {
+      width: 100%;
+    }
+    &:-ms-reveal,
+    &:-ms-clear {
+      display: none;
+    }
+
+    @extend %textFieldGeneral;
+    @extend %defaultFont;
+    font-size: 16px;
+    color: var(--text-password);
+
+    &--view {
+      @extend %textFieldGeneral;
+      @extend %defaultFont;
+      font-size: 16px;
+      color: var(--text-password)
+    }
+  }
+
+  &__passwordLastNumber {
+    @extend .dav-textField__password;
+  }
+}
+
+
+.dav {
+  &-filledOut {
+    border: 1px solid var(--gris-001);
+    background-color: var(--gris-007);
+    color: var(--negro-800);
+  }
+
+  &-leftIconTextfield {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 8px;
+  }
+
+  &-directionHelper{
+      @extend %defaultFont;
+      font-size: var(--font-xxs);
+      color: var(--gray-6765);
+      padding: 8px 8px 0px 8px;
+  }
+}

@@ -1,0 +1,3 @@
+<main [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+  <router-outlet #outlet="outlet" (activate)="moveScroll()"></router-outlet>
+</main>

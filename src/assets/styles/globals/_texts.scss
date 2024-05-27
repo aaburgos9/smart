@@ -1,0 +1,235 @@
+@import "../mixins";
+
+//Titulos genericos para todos los elementos
+
+%defaultFont {
+  font-family: var(--firaSans);
+  font-size: var(--font-xs);
+  line-height: 130%;
+  font-weight: var(--fw-regular);
+  text-align: left;
+  font-style: normal;
+  color: var(--negro-800);
+}
+
+//Titulos genericos para todos los elementos
+// %defaultTitle {
+//   @extend %defaultFont;
+//   display: inline-block;
+//   width: 100%;
+//   margin: 0;
+//   font-size: var(--font-md);
+//   line-height: 120%;
+//   font-weight: var(--fw-bold);
+//   color: var(--titles-color);
+// }
+
+//Subtitulos genericos para todos los elementos
+// %defaultSubtitle {
+//   @extend %defaultTitle;
+//   font-size: var(--font-sm);
+//   color: var(--text-color);
+// }
+.mbass-text {
+  &--xxxs {
+    @extend %defaultFont;
+    font-size: var(--font-xxxs);
+  }
+
+  &--xxs {
+    @extend %defaultFont;
+    font-size: var(--font-xxs);
+  }
+
+  &--xs {
+    @extend %defaultFont;
+    font-size: var(--font-xs);
+  }
+
+  &--sm {
+    @extend %defaultFont;
+    font-size: var(--font-sm);
+  }
+
+  &--md {
+    @extend %defaultFont;
+    font-size: var(--font-md);
+  }
+
+  &--lg {
+    @extend %defaultFont;
+    font-size: var(--font-lg);
+  }
+
+  &--xl {
+    @extend %defaultFont;
+    font-size: var(--font-xl);
+  }
+
+  &--2xl {
+    @extend %defaultFont;
+    font-size: var(--font-2xl);
+  }
+
+  &--thin {
+    font-weight: var(--fw-thin);
+  }
+
+  &--light {
+    font-weight: var(--fw-light);
+  }
+
+  &--regular {
+    font-weight: var(--fw-regular);
+  }
+
+  &--medium {
+    font-weight: var(--fw-medium);
+  }
+
+  &--bold {
+    font-weight: var(--fw-bold);
+  }
+}
+
+.mbass-title {
+  &--lg {
+    @extend %defaultFont;
+    font-size: var(--font-lg);
+    font-weight: var(--fw-bold);
+    color: var(--negro-00);
+  }
+
+  &--sm {
+    @extend %defaultFont;
+    font-size: var(--font-sm);
+    font-weight: var(--fw-bold);
+    color: var(--negro-00);
+  }
+}
+
+.mbass-subtitle {
+  &--xxs {
+    @extend %defaultFont;
+    font-size: var(--font-xs);
+    font-weight: var(--fw-medium);
+  }
+}
+
+.mbass-link {
+  cursor: pointer;
+  text-decoration: underline;
+  @extend %defaultFont;
+
+  &:visited {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+//Clase específica títulos del contentBox
+// .mbass- {
+//   &titleContainer {
+//     &__title {
+//       @extend %defaultTitle;
+
+//       &--2xl {
+//         @extend .mbass-titleContainer__title;
+//         @extend %defaultTitle;
+//         font-size: var(--font-2xl);
+//       }
+//       &--xl {
+//         @extend .mbass-titleContainer__title;
+//         @extend %defaultTitle;
+//         font-size: var(--font-xl);
+//       }
+//       &--lg {
+//         @extend .mbass-titleContainer__title;
+//         @extend %defaultTitle;
+//         font-size: var(--font-lg);
+//       }
+//       &--md {
+//         @extend .mbass-titleContainer__title;
+//         @extend %defaultTitle;
+//         font-size: var(--font-md);
+//       }
+//     }
+//     &__subtitle {
+//       margin-top: 16px;
+//       @extend %defaultSubtitle;
+//     }
+
+//   }
+//   &paragraph {
+//     @extend %defaultFont;
+//     color: var(--gray-6765);
+//   }
+//   &link {
+//     text-decoration: underline;
+//     @extend %defaultFont;
+
+//     &:visited {
+//       text-decoration: underline;
+//     }
+//     &:focus {
+//       text-decoration: underline;
+//     }
+//   }
+
+// }
+
+.mbass- {
+  &divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--negro-300);
+    margin: 0 auto;
+  }
+}
+
+.mbass-buttonReadMore {
+  @extend %defaultFont;
+  font-size: var(--font-xxxs);
+  font-weight: var(--fw-medium);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mbass-truncateText {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.mbass- {
+  &helper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 8px;
+    padding-top: 8px;
+    &__text {
+      position: relative;
+      @extend %defaultFont;
+      font-size: var(--font-xxxs);
+      color: var(--gray-6765);
+    }
+  }
+}
+
+.error {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 8px;
+  position: relative;
+  @extend %defaultFont;
+  font-size: var(--font-xxxs);
+  color: var(--gray-6765);
+  color: var(--rojo-900);
+}

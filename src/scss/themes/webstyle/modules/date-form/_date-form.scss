@@ -1,0 +1,90 @@
+
+/**
+* Modules - forms - Date form
+*/
+
+.date-container {
+    display: table;
+    width: 93%;
+    background-color: #f6f6f6;
+    border: solid 1px #f6f6f6;
+    box-shadow: none;
+    outline: none;
+    height: 3.75em !important;
+    padding: 0 1.3125em !important;
+    font-size: 0.75em !important;
+    border-radius: 5px;
+    color: #595959;
+  }
+  .date-part {
+    font-size: 12px !important;
+    display: inline-block;
+    width: 20px;
+    border: none;
+    padding: 16px 1px !important;
+    margin: 0px 0px;
+    background-color: #f6f6f6;
+    text-align: center;
+    height: 2.5em !important;
+    min-width: 5% !important;
+    border: none !important;
+  }
+  
+  .date-part:first-child {
+    width: 30px;
+  }
+  
+  .container--date {
+    text-align: left !important;
+  }
+  
+  .disabled__Date {
+    pointer-events: none !important;
+  }
+  
+  @media screen and (max-width: 599px) {
+    .date-container {
+      display: table;
+      width: 85%;
+      background-color: #f6f6f6;
+      border: solid 1px #f6f6f6;
+      box-shadow: none;
+      outline: none;
+      height: 3.75em !important;
+      padding: 0 1.3125em !important;
+      font-size: 0.75em !important;
+      border-radius: 5px;
+      color: #595959;
+    }
+    .date-part {
+      display: inline-block;
+      width: 45px;
+      border: none;
+      padding: 14px 2px;
+      margin: 0px 0px;
+      background-color: #f6f6f6;
+      font-size: 12px !important;
+    }
+  }
+  
+  .date-part:focus {
+    outline: none;
+  }
+  
+  .gruop--date {
+    border: solid 1px rgba(112, 112, 112, 0.3) !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    border-radius: 6px !important;
+    padding: 0 0.8571428571em !important;
+    font-size: 14px !important;
+    color: #939393 !important;
+    font-family: "Roboto", sans-serif !important;
+    font-weight: lighter !important;
+    height: 2.6428571429em !important;
+    background-color: white !important;
+  }
+  
+  .gruop--date--error {
+    border-color: #dd141d !important;
+  }

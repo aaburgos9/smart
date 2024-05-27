@@ -1,0 +1,150 @@
+.mbass-contModal {
+    .mbass-contModal--modal {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      --padingH: 24px;
+      padding: var(--padingH) 24px;
+      min-width: 310px;
+      max-width: 300px;
+      /* Se pone el max-height en caso de que el modal exceda su altura o se tome el
+            dispositivo de forma horizontal */
+      height: auto;
+      max-height: 94vh;
+      background: #ebecf0;
+      margin: 0 auto;
+      border-radius: 6px;
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      transform: translate(-50%, -50%);
+      transition-duration: 0.3s;
+      .modalHeader {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+      }
+      .modalHeader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+      .modalBody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+        overflow-y: auto;
+        //quita la margen inferior al ultimo elemento hijo
+        & > * {
+          &:last-child {
+            margin-bottom: 0px;
+          }
+        }
+      }
+    }
+  
+    .mbass-contModal--loader {
+      top: 50%;
+      background-color: transparent;
+      img {
+        display: inline-block;
+        width: 65px;
+        height: auto;
+        margin: 0 auto;
+        pointer-events: none;
+      }
+      svg {
+        display: inline-block;
+        width: 90px;
+        height: auto;
+        margin: 0 auto;
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        &.dark,
+        &.light {
+          .cls-1 {
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 6px;
+          }
+        }
+        &.dark {
+          stroke: #505050;
+        }
+        &.light {
+          stroke: #d7d7d7;
+        }
+        &.default {
+          .cls-1 {
+            fill: none;
+            //stroke: #d74944;
+            stroke: #f84742;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 6px;
+  
+            stroke-dasharray: 230;
+            stroke-dashoffset: 340;
+  
+            animation: loader 4.5s linear reverse infinite;
+            -webkit-animation: loader 4.5s linear reverse infinite;
+            -moz-animation: loader 4.5s linear reverse infinite;
+          }
+        }
+      }
+    }
+  }
+  
+  .mbass-contModal--loaderLight {
+    @extend .mbass-contModal;
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  //Evento mostrar Modal
+  .mbass-contModal--isShow {
+    opacity: 1;
+    pointer-events: inherit;
+    .modal {
+      top: 50%;
+    }
+  }
+  
+  @keyframes loader {
+    0% {
+      stroke-dashoffset: 470;
+    }
+  
+    100% {
+      stroke-dashoffset: 470 * 3;
+    }
+  }
+  
+  @-webkit-keyframes loader {
+    0% {
+      stroke-dashoffset: 470;
+    }
+  
+    100% {
+      stroke-dashoffset: 470 * 3;
+    }
+  }
+  
+  @-moz-keyframes loader {
+    0% {
+      stroke-dashoffset: 470;
+    }
+  
+    100% {
+      stroke-dashoffset: 470 * 3;
+    }
+  }

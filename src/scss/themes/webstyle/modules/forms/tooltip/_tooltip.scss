@@ -1,0 +1,222 @@
+.tooltip
+{
+	// display: inline-block;
+	margin-left: em(5);
+	@include prefix((
+		display: flex,
+		justify-content: center,
+		align-items: center,
+	), webkit moz o ms);
+	&__radio {
+		@include prefix((
+			display: contents !important
+		), webkit moz o ms);
+	}
+	&--ib
+	{
+		width: auto;
+		display: inline-block;
+	}
+	&--lateral
+	{
+		position: absolute;
+		bottom: 11px;
+		right: 10px;
+		width: 20px;
+		height: 20px;	
+		z-index: 10;
+	}
+	&--lists
+	{
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		padding: 0;
+		margin: auto 0;
+		right: 0;
+		width: 16px;
+		height: 16px;	
+		z-index: 100;
+	}
+	&--text
+	{
+		width: auto;
+		display: inline-block;
+	}
+	&__trigger
+	{
+		text-decoration: none;
+		border-radius: 50%;
+		position: relative;
+		cursor: pointer;
+		&--text
+		{
+			width: auto;
+			display: inline-block;
+			height: auto;
+			bottom: 0;
+			text-decoration: underline;
+			font-weight: bold;
+			cursor: pointer;
+		}
+        img
+        {
+            width: 100%;
+        }
+		@include prefix((
+			box-sizing: border-box,
+			appearance: none,
+			display: flex,
+			justify-content: center,
+			align-items: center,
+		), webkit moz o ms);
+		&:hover ~ .tooltip__message
+		{
+			@include prefix((
+				opacity: 1,
+				pointer-events: auto,
+			), webkit moz o ms);
+		}
+		&--small
+		{
+			width: em(16);
+			height: em(16);
+			margin: auto 0;
+		}
+		&--lists
+		{
+			width: em(16);
+			height: em(16);
+			margin: 0;
+		}
+		&--medium
+		{
+			width: em(20);
+			height: em(20);
+			margin: auto 0 auto em(5);
+			top: em(5);
+			
+		}
+		&--innerInput
+		{
+			width: em(14);
+			height: em(14);
+			margin: 0;
+			top: em(3);
+		}
+	}
+	&__message
+	{
+        display: block;
+		width: 275px;
+		padding: em(14);
+        background-color: $gris-cc;
+        box-shadow: 1px 3px 5px rgba($color: $gris-3a, $alpha: .3);
+		position: absolute;
+		border-radius: em(7);
+		font-size: em(13.5);
+		line-height: em(17);
+		font-weight: normal;
+		z-index: 100;
+		text-align: justify;
+		color: $negro-44;
+        &--bottomMiddle
+        {
+			bottom: em(30);
+			right: 0;
+			left: 0;
+			margin: 0 auto;
+			&--bt50
+			{
+				bottom: em(50);
+			}
+			&--bt70
+			{
+				bottom: em(70);
+			}
+			@include prefix((
+				box-sizing: border-box,
+				opacity: 0,
+				transition: ease all 0.3s,
+				pointer-events: none,
+			), webkit moz o ms);
+		}
+		&--middleLeft
+		{
+			right: em(30);
+			margin: auto 0;
+			font-size: em(11);
+			min-height: em(65) ;
+			@include prefix((
+				box-sizing: border-box,
+				opacity: 0,
+				transition: ease all 0.3s,
+				pointer-events: none,
+			), webkit moz o ms);
+		}
+		&--topMiddle
+        {
+			top: em(30);
+			right: 0;
+			left: -0.8em;
+			margin: 0 auto;
+			&--tp50
+			{
+				top: em(50);
+			}
+			@include prefix((
+				box-sizing: border-box,
+				opacity: 0,
+				transition: ease all 0.3s,
+				pointer-events: none,
+			), webkit moz o ms);
+		}
+		&--medium
+		{
+			right: em(35);
+			width: 230px;
+			@include media(lg)
+			{
+				right: em(40);
+				width: em(300);
+			}
+			@include media(xlg)
+			{
+				right: em(40);
+				width: em(300);
+			}
+		}
+		&--small
+		{
+			width: 220px;
+			font-size: em(10.5);
+			@include prefix((
+				display: flex,
+				justify-content: flex-start,
+				align-items: center,
+			), webkit moz o ms);
+			@include media(lg)
+			{
+				width: em(320);
+			}
+			@include media(xlg)
+			{
+				width: em(320);
+			}
+		}
+		&--topMiddleAbsolute
+        {
+			top: em(30);
+			right: 0 !important;
+			left: -40vw !important;
+			margin: 0 auto;
+			font-size: em(11);
+			@include prefix((
+				box-sizing: border-box,
+				opacity: 0,
+				transition: ease all 0.3s,
+				pointer-events: none,
+			), webkit moz o ms);
+		}
+	}
+}

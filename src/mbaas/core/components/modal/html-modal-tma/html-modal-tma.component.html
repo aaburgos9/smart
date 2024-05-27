@@ -1,0 +1,21 @@
+<div class="container" style="background-color: transparent;"  mbaasTaggingPageView>
+  <div
+    class="modalContainer"
+    *ngIf="data"
+    [ngClass]="{ 'modalContainer--isShow': show && data?.display }"
+  >
+    <div class="alertModal">
+      <div class="alertModal__body" [innerHTML]="data.content | passSecurityTrust: 'html'"></div>
+      <div class="buttonContainer buttonContainer--modals">
+        <button
+          type="button"
+          *ngFor="let item of data.buttons; let i = index"
+          [ngClass]='item.class'
+          (click)="onClose(i);"
+          [mbaasTaggingClick]="item.name"
+          [innerHTML]="item.buttonText | passSecurityTrust: 'html'"
+        ></button>
+        </div>
+    </div>
+  </div>
+</div>

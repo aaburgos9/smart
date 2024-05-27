@@ -1,0 +1,59 @@
+<div class="formGroup" [formGroup]="formAddresFormGroup">
+    <label for="valor-bienes" class="formGroup__label">
+      <span>
+        {{ config.label }}
+      </span>
+      <div *ngIf="config.tooltip" class="tooltip">
+        <span class="tooltip__trigger tooltip__trigger--small"  [mbaasTaggingClick]="config.name">
+          <img [src]="config.tooltip.img"/>
+        </span>
+        <span class="tooltip__message tooltip__message--topMiddle">
+           {{ config.tooltip.text }}
+        </span>
+      </div>
+    </label>
+
+<div class="formGroup__flexRow">
+    <select [formControlName]="tipoViaConfig.name" (change)="changeOption($event.target.value)"
+    class="formGroup__input formGroup__input--select formGroup__input--elipsis formGroup__flexRow__child">
+        <option value="">{{ tipoViaConfig.placeholder }}</option>
+        <option
+            *ngFor="let option of tipoViaConfig.data"
+            [value]="option.value"
+            >
+            {{ option.label }}
+        </option>
+    </select>
+    <ng-container *ngIf="showInput123 !== 'otro'">
+
+     <input
+      type="text"
+      class="formGroup__input formGroup__input--alignCenter formGroup__flexRow__child formGroup__flexRow__child--small"
+      [formControlName]="secondInputConfig.name"
+      [ccRestrict]="secondInputConfig.restrict"
+      maxlength="{{ secondInputConfig.maxValue ? secondInputConfig.maxValue : 4 }}"
+      [ngClass]="{ 'formGroup__input--error': validField(secondInputConfig.name) }"
+      (input)="inputState();">
+     <span class="formGroup__flexRow__separator">#</span>
+     <input
+      type="text"
+      class="formGroup__input formGroup__input--alignCenter formGroup__flexRow__child formGroup__flexRow__child--small"
+      [formControlName]="thirdInputConfig.name"
+      [ccRestrict]="thirdInputConfig.restrict"
+      maxlength="{{ thirdInputConfig.maxValue ? thirdInputConfig.maxValue : 4 }}"
+      [ngClass]="{ 'formGroup__input--error': validField(thirdInputConfig.name) }"
+      (input)="inputState();">
+     <span class="formGroup__flexRow__separator">-</span>
+
+     <input
+       type="text"
+       class="formGroup__input formGroup__input--alignCenter formGroup__flexRow__child formGroup__flexRow__child--small"
+       [formControlName]="fourthInputConfig.name"
+       [ccRestrict]="fourthInputConfig.restrict"
+       maxlength="{{ fourthInputConfig.maxValue ? fourthInputConfig.maxValue : 4 }}"
+       [ngClass]="{ 'formGroup__input--error': validField(fourthInputConfig.name) }"
+       (input)="inputState();">
+    </ng-container>
+
+  </div>
+</div>

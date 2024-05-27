@@ -1,0 +1,37 @@
+// input {
+//   display: block;
+//   font-family: inherit;
+//   font-size: 14px;
+//   width: 100%;
+//   border: 1px solid rgba(0, 0, 0, 0.1);
+//   outline: none;
+//   padding: 10px 15px;
+//   color: rgba(0, 0, 0, 0.7);
+//   &:focus {
+//     border: 1px solid rgba(0, 0, 0, 0.4);
+//     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+//   }
+// }
+
+// // ocultar opciones del calendario
+// input::-webkit-calendar-picker-indicator {
+//   -webkit-appearance: none !important;
+//   display: none !important;
+// }
+
+// input[type="date"]::-webkit-input-placeholder {
+//   visibility: hidden !important;
+// }
+
+// ::-webkit-clear-button {
+//   display: none !important; /* Hide the button */
+//   -webkit-appearance: none !important; /* turn off default browser styling */
+// }
+.icon-input {
+  position: absolute;
+  width: 25px;
+  top: 42px;
+  left: 15px;
+}
+
+

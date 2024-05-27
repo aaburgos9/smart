@@ -1,0 +1,985 @@
+/**
+ * Modules - Modal - custom form
+ */
+
+ .customForm
+ {
+    display: block;
+    @include prefix((
+        box-sizing: border-box,
+    ), webkit moz o ms);
+    &--vinculation
+    {
+        border: solid 1px $gris-3a;
+        padding: 0 !important;
+    }
+    &--w9
+    {
+        padding: 0;
+        word-break: break-word;
+        @include media(lg)
+        {
+            padding: 20px !important;
+            font-size: 0.8em;
+            word-break: normal;      
+        }
+        @include media(xlg)
+        {
+            padding: 20px !important;
+            font-size: 0.8em;
+            word-break: normal;      
+        }
+        &__header
+        {
+            border-bottom: solid 2px $gris-3a;
+            @include prefix((
+                display: flex,
+                justify-content: flex-start,
+                align-items: center,
+                flex-direction: column,
+                wrap: flex-wrap,
+            ), webkit moz o ms);
+            @include media(lg)
+            {
+                @include prefix((
+                    flex-direction: row,
+                ), webkit moz o ms);
+            }
+            @include media(xlg)
+            {
+                @include prefix((
+                    flex-direction: row,
+                ), webkit moz o ms);
+            }
+            .headcol
+            {
+                border-bottom: 2px solid $gris-3a;
+                padding: 2px;
+                width: 100%;
+                text-align: left;
+                @include media(lg)
+                {
+                    width: 15%;
+                    border-right: solid 2px $gris-3a;
+                    border-bottom: none;
+                    min-height: 12em;
+                }
+                @include media(xlg)
+                {
+                    width: 15%;
+                    border-right: solid 2px $gris-3a;
+                    border-bottom: none;
+                    min-height: 12em;
+                }
+                &:last-child
+                {
+                    border: none;
+                }
+                &--big
+                {
+                    @include media(lg)
+                    {
+                        text-align: center;
+                        width: 70%; 
+                    }
+                    @include media(xlg)
+                    {
+                        text-align: center;
+                        width: 70%; 
+                    }
+                }
+                h2
+                {
+                    font-size: 1.2em;
+                    @include media(lg)
+                    {
+                        font-size: 2.1em;
+                    }
+                    @include media(xlg)
+                    {
+                        font-size: 2.1em;
+                    }
+                    small
+                    {
+                        font-weight: normal !important;
+                        font-size: 0.7em;
+                    }
+                }
+                h3
+                {
+                    font-size: 1.2em;
+                    line-height: 1.3em;
+                    @include media(lg)
+                    {
+                        font-size: 1.7em;
+                    }
+                    @include media(xlg)
+                    {
+                        font-size: 1.7em;
+                    }
+                }
+                h4
+                {
+                    font-size: 1em;
+                    @include media(lg)
+                    {
+                        font-size: 1.5em;
+                    }
+                    @include media(xlg)
+                    {
+                        font-size: 1.5em;
+                    }
+                }
+                span
+                {
+                    font-size: 0.9em;
+                    @include media(lg)
+                    {
+                        font-size: 1.3em;
+                    }
+                    @include media(xlg)
+                    {
+                        font-size: 1.3em;
+                    }
+                }
+            }
+        }
+        &__grid
+        {
+            margin-bottom: 1em;
+            @include prefix((
+                box-sizing: border-box,
+            ), webkit moz o ms);
+            @include media(lg)
+            {
+                width: 100%;
+                @include prefix((
+                    box-sizing: border-box,
+                    display: flex,
+                    justify-content: flex-start,
+                    align-items: flex-start,
+                ), webkit moz o ms);
+            }
+            @include media(xlg)
+            {
+                width: 100%;
+                @include prefix((
+                    box-sizing: border-box,
+                    display: flex,
+                    justify-content: flex-start,
+                    align-items: flex-start,
+                ), webkit moz o ms);
+            }
+            .gridHead
+            {
+                width: 100%;
+                display: block;
+                @include media(lg)
+                {
+                    border-right: solid 2px $gris-3a;
+                    text-align: center;
+                    width: 6em;
+                    min-height: 57.2em;
+                }
+                @include media(xlg)
+                {
+                    border-right: solid 2px $gris-3a;
+                    text-align: center;
+                    width: 6em;
+                    min-height: 50.5em;
+                }
+                h3
+                {
+                    line-height: 1.2em;
+                    margin: 10px 0;
+                    @include media(lg)
+                    {
+                        margin: 11em -12em;
+                        padding: 0;
+                        width: 30em;
+                        height: 5em;
+                        font-size: 1.4em;
+                        font-weight: normal !important;
+                        @include prefix((
+                            transform: rotate(-90deg),
+                            box-sizing: border-box,
+                        ), webkit moz o ms);
+                    }
+                    @include media(xlg)
+                    {
+                        margin: 11em -12em;
+                        padding: 0;
+                        width: 30em;
+                        height: 5em;
+                        font-size: 1.4em;
+                        font-weight: normal !important;
+                        @include prefix((
+                            transform: rotate(-90deg),
+                            box-sizing: border-box,
+                        ), webkit moz o ms);
+                    }
+                }
+            }
+        }
+        .gridTable
+        {
+            width: 100%;
+            border: solid 2px $gris-3a;
+            @include media(lg)
+            {
+                border: none;
+            }
+            @include media(xlg)
+            {
+                border: none;
+            }
+            tr
+            {
+                border: none;
+                @include prefix((
+                    box-sizing: border-box,
+                    display: flex,
+                    justify-content: flex-start,
+                    align-items: flex-start,
+                    flex-direction: column,
+                ), webkit moz o ms);
+                @include media(lg)
+                {
+                    border-bottom: solid 2px $gris-3a !important;
+                    display: inherit !important;
+                    &:last-child
+                    {
+                        border: none !important;
+                    }
+                }
+                @include media(xlg)
+                {
+                    border-bottom: solid 2px $gris-3a !important;
+                    display: inherit !important;
+                    &:last-child
+                    {
+                        border: none !important;
+                    }
+                }
+                th
+                {
+                    background-color: transparent;
+                    border: none;
+                    font-size: 1em;
+                    padding: 1em;
+                    @include media(lg)
+                    {
+                        background-color: transparent;
+                        border-right: solid 2px $gris-3a;
+                        font-size: 1.1em;
+                        &:last-child
+                        {
+                            border: none;
+                        }
+                    }
+                    @include media(xlg)
+                    {
+                        background-color: transparent;
+                        border-right: solid 2px $gris-3a;
+                        font-size: 1.2em;
+                        &:last-child
+                        {
+                            border: none;
+                        }
+                    }
+                }
+                td
+                {
+                    padding: 0 !important;
+                    border-bottom: solid 2px $gris-3a;
+                    width: 100%;
+                    padding: 1em !important;
+                    @include media(lg)
+                    {
+                        border-right: solid 2px $gris-3a;
+                        width: auto !important;
+                    }
+                    @include media(xlg)
+                    {
+                        border-right: solid 2px $gris-3a;
+                        width: auto !important;
+                    }
+                    p
+                    {
+                        padding: 0;
+                        font-size: 1.1em;
+                        text-align: left;
+                        margin: 0;
+                    }
+                    span
+                    {
+                        font-size: 1em;
+                        padding: 5px 10px;
+                        display: block;
+                    }
+                    hr
+                    {
+                        border-color: $gris-3a;
+                    }
+                }
+            }
+        }
+        &__separator
+        {
+            padding: 0;
+            margin: 0;
+            border-top: 2px solid $gris-3a;
+            border-bottom: 2px solid $gris-3a ;
+            word-break: normal !important;
+            font-size: 0.7rem;
+            @include prefix((
+                box-sizing: border-box,
+                display: flex,
+                align-items: center,
+                justify-content: flex-start,
+            ), webkit moz o ms);
+            .indicator
+            {
+                background-color: $gris-3a;
+                padding: 7px 10px;
+                color: white;
+                font-size: 1.5em;
+                display: inline-block;
+                margin-right: 0.7em;
+                width: 80px;
+                &--light
+                {
+                    background-color: white;
+                    color: $gris-3a;
+                    font-weight: bold;
+                    border-right: solid 2px $gris-3a;
+                }
+            }
+            .title
+            {
+                padding: 7px 10px;
+                color: $gris-3a;
+                font-size: 1.7em;
+                display: inline-block;
+                width: 100%;
+                text-align: left !important;
+                span
+                {
+                    font-size: 0.8em;
+                    padding: 0;
+                    margin: 0;
+                    text-align: left !important;
+                }
+                h2
+                {
+                    padding: 0;
+                    margin: 0;
+                    font-size: 1.3rem;
+                    text-align: left !important;
+                }
+            }
+        }
+        .frameTitle
+        {
+            border: solid 2px $gris-3a;
+            padding: 3px;
+            display: block;
+            margin: 7px 0 10px 15px;
+            font-size: 1.3em;
+            font-weight: bold;
+            &--noBorder
+            {
+                border: none;
+                padding: 0;
+                margin: 0 15px;
+                font-weight: normal;
+            }
+        }
+        .serialNumberBoxes
+        {
+            margin: 7px 0 10px 15px;
+            @include prefix((
+                box-sizing: border-box,
+                display: flex,
+                justify-content: flex-start,
+                align-items: center,
+            ), webkit moz o ms);
+            &__box
+            {
+                width: 25px;
+                height: 35px;
+                border: solid 2px $gris-3a;
+                border-right: none;
+                font-weight: bold;
+                overflow: hidden;
+                @include prefix((
+                    display: flex,
+                    justify-content: center,
+                    align-items: center,
+                ), webkit moz o ms);
+                &--borderRight
+                {
+                    border-right: solid 2px $gris-3a;
+                }
+                &--noBorder
+                {
+                    border: none;
+                }
+            }
+        }
+    }
+    h2
+    {
+        font-weight: bold;
+        font-size: 1.2em;
+        @include media(lg)
+        {
+            font-size: 1.6em;
+        }
+        @include media(xlg)
+        {
+            font-size: 1.6em;
+        }
+    }
+    h3
+    {
+        font-weight: bold !important;
+        text-transform: inherit !important;
+        font-size: 1em;
+        @include media(lg)
+        {
+            font-size: 1.3em;
+        }
+        @include media(xlg)
+        {
+            font-size: 1.3em;
+        }
+    }
+    span, label
+    {
+        font-weight: normal;
+        font-size: 1em;
+        text-align: justify;
+        line-height: 1.4em;
+        &.mr4
+        {
+            @include media(lg)
+            {
+                margin-right: 4em;
+            }
+            @include media(xlg)
+            {
+                margin-right: 4em;
+            }
+        }
+        &.upper
+        {
+            text-transform: uppercase !important;
+        }
+        &.underline
+        {
+            border-bottom: 1px solid #000;
+        }
+        @include media(lg)
+        {
+            font-size: 1.2em;
+        }
+        @include media(xlg)
+        {
+            font-size: 1.2em;
+        }
+    }
+    em
+    {
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    ol
+    {
+        margin: 0;
+        padding-left: 1em;
+        &.pdl1
+        {
+            padding-left: 1em;
+            li
+            {
+                font-size: 1em;       
+                text-align: justify;
+                padding-left: 0.2em;
+                margin-bottom: 0.5em;
+                line-height: 1.3em;
+            }
+        }
+    }
+    ul
+    {
+        margin: 0;
+        padding-left: 1.2em;
+        li
+        {
+            font-size: 1em;       
+            text-align: justify;
+            padding-left: 0.2em;
+            margin-bottom: 0.5em;
+            line-height: 1.3em;
+        }
+    }
+    label
+    {
+        position: relative;
+        input[type=checkbox]
+        {
+            opacity: 1;
+            width: 13px;
+            height: 13px;
+            top: 13px;
+        }
+        span
+        {
+            padding-left: 20px;
+            font-size: 1em;
+            display: block;
+            margin-top: 10px;
+        }
+    }
+    table
+    {
+        width: 100%;
+        border: solid 1px $negro-44;
+        tr
+        {
+            border-bottom: solid 1px $negro-44;
+            &:last-child
+            {
+                border-bottom: 0;
+            }
+            td
+            {
+                border-right: solid 1px $negro-44;
+                padding: em(2) em(5);
+                font-size: 0.9em;
+                vertical-align: top;
+                &.w25
+                {
+                    width: 25%;
+                }
+                &.center
+                {
+                    text-align: center;
+                }
+                @include media(lg)
+                {
+                    font-size: 1.2em;
+                }
+                @include media(xlg)
+                {
+                    font-size: 1.2em;
+                }
+                &:last-child
+                {
+                    border-right: 0;
+                }
+                &.alingRight
+                {
+                    
+                    text-align: right;
+                }
+            }
+            th
+            {
+                background-color: $gris-70;
+                color: $negro-44;
+                font-size: 0.9em;
+                padding: 5px;
+                border: none;
+                &.dark
+                {
+                    background-color: $gris-3a;
+                    color: white;
+                    text-align: center;
+                }
+                &.gray
+                {
+                    background-color: $gris-cc;
+                    color: white;
+                    text-align: center;
+                }
+                @include media(lg)
+                {
+                    font-size: 1.3em;
+                }
+                @include media(xlg)
+                {
+                    font-size: 1.3em;
+                }
+            }
+        }
+        &.tableResponsive
+        {
+            tr
+            {
+                @include prefix((
+                    box-sizing: border-box,
+                    display: flex,
+                    justify-content: flex-start,
+                    align-items: flex-start,
+                    flex-direction: column,
+                ), webkit moz o ms);
+                td
+                {
+                    width: 100%;
+                    border: none;
+                    @include prefix((
+                        flex: 1,
+                    ), webkit moz o ms);
+                }
+                @include media(md)
+                {
+                    display: block !important;
+                    td
+                    {
+                        width: auto;
+                        border-right: solid 1px $negro-44;
+                        &:last-child
+                        {
+                            border-right: none;
+                        }
+                    }
+                }
+                @include media(lg)
+                {
+                    display: block !important;
+                    td
+                    {
+                        width: auto;
+                        border-right: solid 1px $negro-44;
+                        &:last-child
+                        {
+                            border-right: none;
+                        }
+                    }
+                }
+                @include media(xlg)
+                {
+                    display: block !important;
+                    td
+                    {
+                        width: auto;
+                        border-right: solid 1px $negro-44;
+                        &:last-child
+                        {
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .brand
+    {
+        width: 200px;
+        display: block;
+        @include media(lg)
+        {
+            width: 250px;
+        }
+        @include media(xlg)
+        {
+            width: 250px;
+        }
+    }
+    @include media(lg)
+    {
+        padding: 3em 6em;
+    }
+    @include media(xlg)
+    {
+        padding: 3em 6em;
+    }
+    &__row
+    {
+        width: 100%;
+        padding: em(10);
+        min-height: 2em;
+        @include prefix((
+            display: flex,
+            flex-direction: column,
+            box-sizing: border-box,
+        ), webkit moz o ms);
+        @include media(lg)
+        {
+            @include prefix((
+                flex-direction: row,
+            ), webkit moz o ms);
+        }
+        @include media(xlg)
+        {
+            @include prefix((
+                flex-direction: row,
+            ), webkit moz o ms);
+        }
+        &--center
+        {
+            @include prefix((
+                justify-content: center,
+            ), webkit moz o ms);
+        }
+        &--spaceBetween
+        {
+            @include prefix((
+                justify-content: space-between,
+            ), webkit moz o ms);
+        }
+        &--spaceAround
+        {
+            @include prefix((
+                justify-content: space-around,
+            ), webkit moz o ms);
+        }
+        &--start
+        {
+            @include prefix((
+                justify-content: flex-start,
+            ), webkit moz o ms);
+        }
+        &--bdTop
+        {
+            border-top: solid 2px $negro-44;
+            padding-top: 1em;
+        }
+        &--fdColumn
+        {
+            @include prefix((
+                flex-direction: column,
+            ), webkit moz o ms);
+            span
+            {
+                margin-bottom: 0.5em;
+            }
+        }
+        &--tableContainer
+        {
+            width: 100%;
+            overflow-x: scroll;
+        }
+        &__header
+        {
+            background-color: rgb(242, 242, 242);
+            border: solid 1px $gris-3a;
+            span
+            {
+                font-weight: bold;
+            }
+        }
+        &--noMargin
+        {
+            margin: 0 !important;
+            padding: 0;
+        }
+    }
+    .fieldContainer
+    {
+        padding-right: 1em;
+        width: 100%;
+        margin: 5px 0;
+        @include prefix((
+            display: flex,
+            box-sizing: border-box,
+            align-items: flex-start,
+            justify-content: flex-start,
+            flex-direction: column,
+        ), webkit moz o ms);
+        @include media(lg)
+        {
+            @include prefix((
+                flex-direction: row,
+            ), webkit moz o ms);
+        }
+        @include media(xlg)
+        {
+            @include prefix((
+                flex-direction: row,
+            ), webkit moz o ms);
+        }
+        &--oneThirds
+        {
+            width: 100%;
+            @include media(lg)
+            {
+                width: 50% !important;
+            }
+            @include media(xlg)
+            {
+                width: 50% !important;
+            }
+        }
+        &--twoThirds
+        {
+            width: 100%;
+            @include media(lg)
+            {
+                width: 200% !important;
+            }
+            @include media(xlg)
+            {
+                width: 200% !important;
+            }
+        }
+        &--noMargin
+        {
+            margin: 0 !important;
+        }
+        &__label
+        {
+            color: $gris-3a;
+            margin-right: 1.5em;
+            font-size: 1em;
+            text-align: left;
+            width: auto;
+        }
+        &__field
+        {
+            border-bottom: solid 2px rgb(189, 189, 189);
+            flex: 1;
+            text-align: center;
+            margin-top: 0.5em;
+            margin-left: 0.5em;
+            font-size: 1em;
+        }
+        &__checkbox
+        {
+            @include prefix((
+                display: flex,
+                box-sizing: border-box,
+                align-items: center,
+                justify-content: center,
+            ), webkit moz o ms);
+            &__label
+            {
+                font-size: 1em;
+                margin-right: 1.5em;
+                flex: 1;
+            }
+            &__box
+            {
+                width: 25px;
+                height: 25px;
+                border: solid 2px rgb(189, 189, 189);
+                background-color: white;
+                color: $gris-3a;
+                margin-right: 1.5em;
+                padding: 2px !important;
+                overflow: hidden;
+                @include prefix((
+                    display: flex,
+                    align-items: center,
+                    justify-content: center,
+                ), webkit moz o ms);
+                &--small
+                {
+                    width: 15px;
+                    height: 15px;
+                    border: solid 2px $gris-3a;
+                    margin: 0 0.7em 0 0;
+                }
+            }
+        }
+    }
+    // Size modificators
+    .half
+    {
+        width: 100%;
+        text-align: left;
+        @include media(lg)
+        {
+            width: 50% !important;
+        }
+        @include media(xlg)
+        {
+            width: 50% !important;
+        }
+        span
+        {
+            display: block;
+        }
+    }
+    .oneThirds
+    {
+        width: 100%;
+        @include media(lg)
+        {
+            width: 33.3% !important;
+        }
+        @include media(xlg)
+        {
+            width: 33.3% !important;
+        }
+    }
+    .twoThirds
+    {
+        width: 100%;
+        @include media(lg)
+        {
+            width: 66.4% !important;
+        }
+        @include media(xlg)
+        {
+            width: 66.4% !important;
+        }
+    }
+    // End
+    // Align modificators
+    .middle
+    {
+        @include prefix((
+            display: flex,
+            align-items: center,
+        ), webkit moz o ms);
+    }
+    .alingRight
+    {
+        text-align: right;
+    }
+    .alingLeft
+    {
+        text-align-last: left;
+    }
+    // End
+    // Text modificators
+    // Fontface
+    .times
+    {
+        font-family: "Times New Roman", Times, Baskerville, Georgia, serif !important;
+    }
+    .arial
+    {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    }
+    // Style
+    .italic
+    {
+        font-style: italic !important;
+    }
+    .underLine
+    {
+        border-bottom: solid $gris-3a 1px;
+        margin-left: 2em;
+        box-sizing: border-box;
+    }
+    // Color
+    .red
+    {
+        color: $rojo !important;
+    }
+    .gray
+    {
+        color: gray;
+    }
+    // End
+    .pdr1
+    {
+        padding-right: 1em;
+    }
+ }

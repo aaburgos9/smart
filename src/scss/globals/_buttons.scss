@@ -1,0 +1,361 @@
+@import '../mixins';
+
+%btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  width: 64vw;
+  max-width: 255px;
+  isolation: isolate;
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: inherit;
+}
+
+.smart-buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  //margin-top: 16px;
+
+  &--row{
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  > p {
+    @include defaultFont(1, $fz: 12px, $fw: normal, $c: var(--text-color));
+  }
+}
+
+.smart-button {
+
+  &__text {
+    cursor: pointer;
+    @include defaultFont(1, $fz: 12px, $fw: normal, $c: var(--text-color), $ta: center);
+
+    &--small{
+      @extend .smart-button__text;
+      @include defaultFont(0, $fz: 11px);
+    }
+  }
+
+  &--primary {
+    @extend %btn;
+    @include defaultFont(1, $fz: var(--font-p), $fw: bold, $c: #fff, $ta: center);
+    background-color: var(--green-primary);
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      background: #277312;
+    }
+
+
+    &:active {
+      &:after {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    > :nth-child(n) {
+      z-index: 1;
+    }
+
+    &:disabled {
+      background-color: #d1d5e0;
+      @include defaultFont(
+        1,
+        $fz: var(--font-p),
+        $fw: bold,
+        $c: #838383,
+        $ta: center
+      );
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+  &--enterpriseButton{
+    @extend .smart-button--primary;
+    background-color: var(--gray-enterprises);
+    &:hover {
+      background: var(--gray-enterprises);
+    }
+
+  }
+
+  &--secondary {
+    @extend %btn;
+    @include defaultFont(1, $fz: var(--font-p), $fw: bold, $c: #000000, $ta: center);
+    background-color: initial;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      color: #000000;
+      background: #F1F2F8;
+    }
+
+    &:active {
+      &:after {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    > :nth-child(n) {
+      z-index: 1;
+    }
+
+    &:disabled {
+      background-color: transparent;
+      @include defaultFont(
+        1,
+        $fz: var(--font-p),
+        $fw: bold,
+        $c: #959393,
+        $ta: center
+      );
+      cursor: not-allowed;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &--outline {
+    @extend %btn;
+    background-color: transparent;
+    border: 1px solid #404040;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+    @include defaultFont(0, $fw: bold, $c: #404040, $fz: var(--font-p), $lh: 16px);
+
+    &:hover {
+      border: 1px solid #000000;
+      color: #000000;
+      background: #F1F2F8;
+    }
+
+
+    &:active {
+      &:after {
+        width: 500px;
+        height: 500px;
+      }
+    }
+
+    > :nth-child(n) {
+      z-index: 1;
+    }
+
+    &:disabled {
+      border: 1px solid #959393;
+      @include defaultFont(0, $fw: bold, $c: #959393, $fz: var(--font-p), $lh: 16px);
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &--pill {
+    position: relative;
+    isolation: isolate;
+    padding: 8px 16px 8px 40px;
+    border-radius: 16px;
+    min-width: 136px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: var(--white-ff);
+    overflow: hidden;
+    @include prefix((
+        box-shadow: 2px 2px 12px 0 rgba(166,171,189,0.34)
+    ), webkit moz ms o);
+    @include defaultFont(1, $fz: 11px, $fw: medium, $c: var(--black-00), $ta: center);
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      padding: 6px;
+      background-color: var(--white-ff);
+      border: 1px solid var(--gray-ef);
+      border-radius: 50px;
+    }
+
+    &:hover {
+      background-color: var(--gray-df);
+      box-shadow: none;
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &--iconLarge {
+    position: relative;
+    isolation: isolate;
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: var(--white-ff);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: solid 1px var(--border-icon-button);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover{
+      border: solid 1px var(--gray-ba);
+    }
+    &:active{
+      background-color: var(--white-f0);
+    }
+    &:disabled{
+      pointer-events: none;
+      opacity: 58%;
+      cursor: not-allowed;
+      border: solid 1px var(--gray_f5);
+      &~.smart-button__text{
+        opacity: 58%;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &--iconSmall {
+    @extend .smart-button--iconLarge;
+    width: 24px;
+    height: 24px;
+    border: solid 1px var(--border-icon-button-small);
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--iconSimple {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    img {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover{
+      background-color: var(--background-button-action-hover);
+    }
+
+    &:active{
+      background-color: var(--gray-df);
+    }
+    &:disabled{
+      pointer-events: none;
+      opacity: 58%;
+      cursor: not-allowed;
+    }
+  }
+
+  &--back {
+    position: relative;
+    cursor: pointer;
+    padding: 4px 8px 4px 24px;
+    margin-right: 16px;
+    border-radius: 4px;
+    @include defaultFont(1, $fz: var(--font-p));
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: url(../../assets/icons/default-icons/icon-arrow-back.svg);
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover{
+      background-color: var(--background-button-action-hover);
+    }
+
+    &:active{
+      background-color: var(--gray-df);
+    }
+    &:disabled{
+      pointer-events: none;
+      opacity: 58%;
+      cursor: not-allowed;
+    }
+  }
+
+  &__ripple {
+    position: absolute;
+    top: var(--mouse-y);
+    left: var(--mouse-x);
+    display: block;
+    margin: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background: rgba(40, 40, 40, 0.5);
+    transform: scale(0);
+    pointer-events: none;
+    animation: clickeffect 1s ease;
+    -webkit-animation: clickeffect 1s ease;
+  }
+
+}
+
+@keyframes clickeffect {
+  from {
+    opacity: 0.7;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@-webkit-keyframes clickeffect {
+  from {
+    opacity: 0.7;
+    transform: scale(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2);
+  }
+}

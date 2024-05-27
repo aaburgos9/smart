@@ -1,0 +1,34 @@
+<section class="smart-contModal">
+  <div class="smart-modal">
+    <!-- el header del modal queda fuera del scroll -->
+    <div class="smart-modalHeader"
+    *ngIf="data"
+    [ngClass]="{ 'modalContainer--isShow': show && data?.display }">
+      <div class="smart-modalIcon">
+        <img src="../cdte/assets/icons/modal-icons/Icon-popUp-info.svg" alt="" />
+      </div>
+      <!-- Titulo del modal-->
+      <h3 *ngIf="data.title !== ''" class="smart-modalInfo__title" [innerHTML]="data.title | passSecurityTrust: 'html'"></h3>
+    </div>
+
+    <!-- el body del molda posee scroll -->
+    <div class="smart-modalBody">
+      <div class="smart-modalInfo">
+        <div class="smart-modalInfo__description">
+          <p class="text__align--center text__weight--regular text__color--dark formatText" [innerHTML]="data.message | passSecurityTrust: 'html'"></p>
+        </div>
+      </div>
+      <div class="smart-buttonsContainer">
+        <div class="smart-buttonContainer" >
+        <button
+          *ngFor="let item of data.buttons; let i = index"
+          type="button" [mbaasTaggingClick]="i"
+          class="{{item.class}}"
+          (click)="item.callback(onClose(item.buttonText));"
+          [innerHTML]="item.buttonText | passSecurityTrust: 'html'"
+        ></button>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>

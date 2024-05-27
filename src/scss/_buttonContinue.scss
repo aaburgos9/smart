@@ -1,0 +1,75 @@
+@import '/src//scss/mixins';
+
+%btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+    border-radius: 20px;
+    width: 64vw;
+    max-width: 255px;
+    isolation: isolate;
+    border: none;
+    outline: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: inherit;
+  }
+
+.smart-buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+
+    &--row{
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .button {
+        &--primary {
+          @extend %btn;
+          @include defaultFont(1, $fz: var(--font-p), $fw: bold, $c: #fff, $ta: center);
+          background-color: var(--enabledButton);
+          position: relative;
+          overflow: hidden;
+
+          &:hover,
+            &.active {
+              background-color: var(--pressButton, 3%) !important;
+            }
+
+          &:active {
+            &:after {
+              width: 500px;
+              height: 500px;
+            }
+          }
+
+          > :nth-child(n) {
+            z-index: 1;
+          }
+
+          &:disabled {
+            background-color: var(--disabledButton);
+            font-family: var(--firaSans);
+            font-size: var(--font-p);
+            line-height: initial;
+            font-weight: 700;
+            text-align: center;
+            font-style: normal;
+            color: #838383;
+            pointer-events: none;
+            cursor: not-allowed;
+          }
+        }
+      }
+  }
+

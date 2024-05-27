@@ -1,0 +1,19 @@
+
+/**
+ * Modules - Alerts modal
+ */
+
+ .alertModal
+ {
+	 background-color: white;
+	 width: 100%;
+	 margin: auto;
+	 padding-bottom: em(23);
+	 position: relative;
+	 overflow: visible;
+	 border-radius: em(9);
+	 p
+	 {
+		 line-height: em(21);
+	 }
+ }

@@ -1,0 +1,74 @@
+
+/**
+ * Modules - inner content box
+ */
+
+ .contentBox
+ {
+    display: block;
+    padding: em(14);
+    padding-bottom: em(40) !important;
+    margin: em(16) auto;
+    background-color: white;
+    box-shadow: 1px 3px 5px rgba($color: $gris-3a, $alpha: .3);
+    border-radius: em(10);
+    width: 100%;
+    position: relative;
+    &--naked
+    {
+        background-color: white;
+        box-shadow: none;
+        padding: em(14);
+        margin: em(16) auto;
+    }
+    @include media(lg){
+        width: 50%;
+    }
+    @include media(xlg){
+        width: 50%;
+    }
+    &__productLabel
+    {
+        background-color: transparent;
+        border-radius: 0;
+        padding: em(10) 0 0 0;
+        height: auto;
+        margin: 0;
+        text-decoration: none !important;
+        border-top: solid 1px rgba($gris-180, 0.5) !important;
+        &__trigger
+        {
+            &--naked
+            {
+                margin-top: em(10);
+                border: none !important;
+            }
+            margin: 0;
+            .show
+            {
+                display: block;
+            }
+            .hide
+            {
+                display: none;
+            }
+        }
+        span
+        {
+            font-weight: bold !important;
+            font-size: 1em;
+            padding: 0;
+            margin: 0;
+            color: $negro-57;
+        }
+        img
+        {
+            width: 17px !important;
+        }
+        @include prefix((
+            display: flex,
+            align-items: center,
+            justify-content: space-between,
+        ), webkit moz o ms);
+    }
+}

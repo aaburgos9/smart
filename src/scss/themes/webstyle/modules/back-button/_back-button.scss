@@ -1,0 +1,48 @@
+
+/**
+ * Modules - Back button
+ */
+// Anterior "btnBack"
+.backButton
+{
+    /* position: absolute;
+    right: 16px;
+    top: 16px; */
+    width: 100%; 
+    text-align: center;
+    text-decoration: none;
+    z-index: 10;
+    @include prefix((
+        display: flex,
+        justify-content: flex-end,
+        align-items: center,
+        flex-direction: row, 
+    ), webkit moz o ms);
+    img {
+        /* height: 14px;
+        width: 14px; */
+        height: 24px;
+        width: 24px;
+    }
+    span{
+        line-height: em(16);
+        font-weight: em(400);
+        text-align: left;
+        font-style: normal;
+        font-family: "Roboto Condensed", sans-serif;
+        margin: 0 em(9);
+        padding: 0;
+        font-size: em(14);
+        color: $negro-44;
+        font-weight: normal;
+    }
+    @include media(md)
+    {
+        margin-top: 1em;
+    }
+    @include media(lg){
+    }
+    @include media(xlg){
+     
+    }
+} 

@@ -1,0 +1,51 @@
+.smart-headerEnterprise {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 16px 24px;
+  
+    max-width: 536px;
+    margin: 0 auto;
+  
+  
+    background: rgb(29, 29, 29);
+    background: linear-gradient(90deg, rgba(29, 29, 29, 1) 5%, rgba(87, 87, 87, 1) 100%);
+  
+    .smart-headerEnterprise__leftContent {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+  
+      .smart-titleHeader{
+        @extend %defaultTitle;
+        color: var(--white-ff)!important;
+      }
+  
+      .smart-arrowBack {
+        display: none;
+        width: 24px;
+        height: 24px;
+  
+        cursor: pointer;
+  
+        &--show{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  
+    .smart-headerEnterprise__rightContet {
+      .smart-closeBtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+  
+        cursor: pointer;
+      }
+    }
+  }

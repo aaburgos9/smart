@@ -1,0 +1,123 @@
+@import "../scss/globals/texts";
+@import "../scss/mixins";
+
+.formGroup__flexRow{
+    display: flex;
+    gap: 20%;
+    padding: 0px 15px;
+    min-width: 104px;
+    .radiobuttonContainer {
+        width: auto;
+        min-height: 24px;
+        font-size: var(--font-medium);
+        .radiobtn {
+            position: relative;
+            top: 0;
+            left: -48px;
+            height: 22px;
+            width: 22px;
+            background-color: white !important;
+            border-radius: 50%;
+        }
+        .radiobuttonContainer__label--naked{
+            position: relative;
+            top: 0;
+            left: -45px;
+            align-items: center;
+            height: 25px;
+            width: 30px;
+            min-height: 24px;
+            font-size: var(--font-medium);
+        }
+    }
+}
+.formGroup__label{
+    width: 100%;
+    padding: 0px 15px;
+    min-height: 24px;
+    @extend %defaultFont;
+    font-size: var(--font-medium);
+    font-weight: var(--fw-medium);
+}
+.formGroup__input{
+    width: calc(100% - 20px);
+    height: 40px;
+    padding: 8px;
+    margin: 10px;
+    padding-left: 35px;
+    min-height: 24px;
+}
+input:disabled{
+  cursor: not-allowed;
+}
+input[type="radio"]:disabled ~ label:before{
+  opacity: 52%;
+  cursor: no-drop;
+  cursor: not-allowed;
+
+}
+input[type="radio"]:disabled ~ label:after{
+  opacity: 52%;
+  cursor: no-drop;
+  cursor: not-allowed;
+
+}
+input[type="radio"]:disabled:before{
+      opacity: 52%;
+      cursor: no-drop;
+      cursor: not-allowed;
+
+}
+input[type="radio"]:disabled:after{
+  opacity: 52%;
+  cursor: no-drop;
+  cursor: not-allowed;
+
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+    position: static;
+    margin-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+}
+[type="radio"]:checked:before,
+[type="radio"]:not(:checked):before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--gray-b8);
+    border-radius: 100%;
+    background: var(--white-ff);
+}
+
+[type="radio"]:checked:before{
+    border: 1px solid var(--green-primary);
+}
+[type="radio"]:checked:after,
+[type="radio"]:not(:checked):after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: var(--green-primary);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked):after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}

@@ -1,0 +1,82 @@
+$background-color_1: #277312;
+$color_1: #f2f2f2;
+$color_2: black;
+$color_3: white;
+// $background-color_1: #333;
+$background-color_2: #ddd;
+$background-color_3: #277312;
+
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: $background-color_1;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: $color_1 !important;
+		display: block;
+		transition: 0.3s;
+		&:hover {
+			color: $color_2 !important;
+		}
+	}
+	.closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+	}
+}
+
+.topnav {
+	overflow: hidden;
+	background-color: $background-color_1 !important;
+  height: 70px;
+	a {
+		color: $color_1 !important;
+		text-align: center;
+		padding-top: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+		text-decoration: none;
+    height: 70px;
+		font-size: 25px;
+    position: relative;
+    top: -2px;
+		&:hover {
+			background-color: $background-color_2 !important;
+			color: $color_2 !important;
+		}
+	}
+	a.active {
+		background-color: $background-color_3 !important;
+		color: $color_3 !important;
+	}
+}
+
+
+@media screen and (max-height: 450px) {
+	.sidenav {
+		padding-top: 15px;
+		a {
+			font-size: 18px;
+		}
+	}
+}
+
+.Expandable{
+  width: 250px;
+  --false{
+    width: 0px;
+  }
+}

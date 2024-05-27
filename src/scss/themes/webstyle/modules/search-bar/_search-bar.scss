@@ -1,0 +1,331 @@
+.contentSearchBar {
+    display: block;
+    width: 90%;
+    margin: 0 auto 0;
+    position: relative;
+
+    &--no-back {
+        background-color: transparent;
+        box-shadow: inherit;
+    }
+
+    &--no-padding {
+        padding: 0;
+    }
+
+    &--fullWidth {
+        width: 100%;
+    }
+
+    .formApp {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    .formApp .input,
+    .formApp .input--key {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: relative;
+        margin-bottom: 16px;
+    }
+
+    .formApp .input--key {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        justify-content: center;
+        margin-bottom: 14px;
+    }
+
+    .formApp>*:last-child {
+        margin-bottom: 0px;
+    }
+
+    .pH-16px {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .mt-16px {
+        margin-top: 16px;
+    }
+
+    .mb-16px {
+        margin-bottom: 16px;
+    }
+
+    input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-shadow: none;
+    }
+
+    input:matches([type=email],
+        [type=number],
+        [type=password],
+        [type=search],
+        [type=tel],
+        [type=text],
+        [type=url]) {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-shadow: none;
+    }
+
+    .input__textBoxSearch {
+        display: inline-block;
+        width: 100%;
+        height: 40px;
+        padding: 8px 40px 8px 14px;
+        border: none;
+        -webkit-border: 1px solid #ffffff;
+        -moz-border: 1px solid #ffffff;
+        -ms-border: 1px solid #ffffff;
+        -o-border: 1px solid #ffffff;
+        border: 1px solid #ffffff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        border-radius: 20px;
+        background-color: #fafafc;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #676565;
+        transition-duration: 0.2s;
+    }
+
+    .input__textBoxSearch:disabled {
+        background-color: #fafafc;
+        color: #676565;
+        cursor: not-allowed;
+        opacity: 70%;
+        -webkit-text-fill-color: #676565;
+        -webkit-border: 1px solid #ffffff;
+        -moz-border: 1px solid #ffffff;
+        -ms-border: 1px solid #ffffff;
+        -o-border: 1px solid #ffffff;
+        border: 1px solid #ffffff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+    }
+
+    .input__textBoxSearch::placeholder {
+        color: #676565;
+    }
+
+    .input__textBoxSearch:focus {
+        -webkit-border: 1px solid #e5e3e3;
+        -moz-border: 1px solid #e5e3e3;
+        -ms-border: 1px solid #e5e3e3;
+        -o-border: 1px solid #e5e3e3;
+        border: 1px solid #e5e3e3;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        color: #404040;
+    }
+
+    .listSearch {
+        position: absolute;
+        width: 100%;
+        background-color: #fafafc;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        z-index: 55;
+        -webkit-border: 1px solid #e5e3e3;
+        -moz-border: 1px solid #e5e3e3;
+        -ms-border: 1px solid #e5e3e3;
+        -o-border: 1px solid #e5e3e3;
+        border: 1px solid #e5e3e3;
+        -webkit-border-top: none;
+        -moz-border-top: none;
+        -ms-border-top: none;
+        -o-border-top: none;
+        border-top: none;
+        max-height: 250px;
+        overflow-y: scroll;
+    }
+
+    ul {
+        list-style: none;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        padding-inline-start: 0;
+    }
+
+    .hidden {
+        display: none;
+        pointer-events: nones;
+    }
+
+    .input__buttonAction {
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        opacity: 0.8;
+        right: calc(-100% + 40px);
+        top: -40px;
+        margin-bottom: -40px;
+    }
+
+    .bg-search {
+        background-repeat: no-repeat;
+        background-position: center;
+        right: calc(-100% + 50px);
+    }
+
+    .filledOut,
+    .input__textBoxSearch--filledOut,
+    .input__textBoxSearch:focus {
+        -webkit-border: 1px solid #e5e3e3;
+        -moz-border: 1px solid #e5e3e3;
+        -ms-border: 1px solid #e5e3e3;
+        -o-border: 1px solid #e5e3e3;
+        border: 1px solid #e5e3e3;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        color: #404040;
+    }
+
+    .listSearch__option {
+        min-height: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-top: 1px solid #e5e3e3;
+        margin: 0px 13px;
+        width: auto;
+        padding-left: 10px;
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #404040;
+        cursor: pointer;
+    }
+
+    .pl-0px {
+        padding-left: 0px;
+    }
+
+    .pV-8px {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .listSearch__option* {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 18px;
+        font-weight: 400;
+        text-align: left;
+        font-style: normal;
+        color: #404040;
+    }
+
+    .list-description {
+        width: 100%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .fz-14px {
+        font-size: 14px;
+    }
+
+    .fz-10px {
+        font-size: 10px;
+    }
+
+    p {
+        margin: 0 0 0 0;
+    }
+
+    .input__textBoxSearch--filledOut {
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        -webkit-border-bottom-style: none;
+        -moz-border-bottom-style: none;
+        -ms-border-bottom-style: none;
+        -o-border-bottom-style: none;
+        border-bottom-style: none;
+    }
+
+    //Estilos section 2
+
+    .info-results {
+        display: flex;
+       justify-content: flex-end;
+        font-size: 0.79rem;
+        margin-bottom: 16px;
+        color: #676565;
+    }
+
+    .info-results span {
+        margin-right: 4px;
+        font-size: 1em;
+    }
+
+    .info-results p {
+        font-size: 0.79rem;
+        color: #676565;
+    }
+
+    .fw-bold {
+        font-weight: 700;
+    }
+
+    .mb-0px {
+        margin-bottom: 0px;
+    }
+
+    .no-results {
+        padding: 24px 32px;
+        border-radius: 8px;
+        background-color: #e1e1e5;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: center;
+        font-style: normal;
+        color: #404040;
+    }
+
+    .no-results p {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: center;
+        font-style: normal;
+        color: #404040;
+    }
+
+    .mt-24px {
+        margin-top: 24px;
+    }
+}

@@ -1,0 +1,163 @@
+//-------------------------------- Variables
+
+//Charset
+@charset "UTF-8";
+
+:root{
+  font-size: 10px;
+// New definitions dynamic fonts
+  // XXXS: 11px a 12px
+  --font-xxxs: clamp(1.1rem, 0.5vw + 0.8rem, 1.2rem);
+  // XXS: 12px a 14px
+  --font-xxs: clamp(1.2rem, 1vw + 0.6rem, 1.4rem);
+  // XS: 14px a 16px
+  --font-xs: clamp(1.4rem, 1vw + 0.8rem, 1.6rem);
+  // SM: 16px a 18px
+  --font-sm: clamp(1.6rem, 1vw + 1rem, 1.8rem);
+
+  // Titles
+  // MD: 18px a 28px
+  --font-md: clamp(1.8rem, 5vw - 1.2rem, 2.8rem);
+  // LG: 22px a 32px
+  --font-lg: clamp(2.2rem, 5vw - 0.8rem, 3.2rem);
+  // XL: 28px a 48px
+  --font-xl: clamp(2.8rem, 10vw - 3.2rem, 4.8rem);
+  // 2XL: 32px a 56px
+  --font-2xl: clamp(3.2rem, 14vw - 5.6rem, 5.6rem);
+
+  --fw-thin: 100;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --rojo-00: rgba(225, 17, 28, 1);
+  --rojo-300: rgba(225, 63, 72, 1);
+  --rojo-301: rgba(255, 89, 71, 1);
+  --rojo-400: rgba(253, 49, 33, 1);
+  --rojo-500: rgba(239, 36, 34, 1);
+  --rojo-600: rgba(221, 20, 29, 1);
+  --rojo-700: rgba(208, 3, 21, 1);
+  --rojo-800: rgba(194, 0, 3, 1);
+  --rojo-900: rgba(183, 4, 18, 1);
+  --negro-00: rgba(0, 0, 0, 1);
+  --negro-200: rgba(217, 217, 217, 1);
+  --negro-300: rgba(202, 202, 202, 1);
+  --negro-400: rgba(173, 173, 173, 1);
+  --negro-500: rgba(131, 131, 131, 1);
+  --negro-600: rgba(110, 110, 110, 1);
+  --negro-700: rgba(78, 78, 78, 1);
+  --negro-800: rgba(64, 64, 64, 1);
+  --negro-900: rgba(44, 44, 44, 1);
+  --azul-00: rgba(4, 125, 178, 1);
+  --azul-300: rgba(122, 203, 235, 1);
+  --azul-400: rgba(69, 183, 226, 1);
+  --azul-500: rgba(0, 153, 217, 1);
+  --azul-600: rgba(0, 140, 203, 1);
+  --azul-700: rgba(0, 122, 184, 1);
+  --azul-800: rgba(0, 106, 165, 1);
+  --azul-900: rgba(0, 75, 133, 1);
+  --amarillo-00: rgba(255, 203, 36, 1);
+  --amarillo-800: rgba(249, 240, 182, 1);
+  --amarillo-900: rgba(255, 224, 29, 1);
+  --naranja-00: rgba(233, 106, 8, 1);
+  --naranja-600: rgba(224, 199, 51, 1);
+  --naranja-700: rgba(222, 177, 42, 1);
+  --naranja-800: rgba(219, 154, 32, 1);
+  --naranja-900: rgba(213, 116, 14, 1);
+  --naranja-1000: rgba(191, 83, 0, 1);
+  --verde-00: rgba(2, 136, 70, 1);
+  --verde-500: rgba(130, 240, 159, 1);
+  --verde-600: rgba(77, 189, 112, 1);
+  --verde-700: rgba(2, 140, 68, 1);
+  --verde-800: rgba(62, 139, 68, 1);
+  --verde-900: rgba(1, 109, 56, 1);
+  --verde-1000: rgba(7, 91, 50, 1);
+  --verde-1100: rgba(7, 91, 50, 1);
+  --gris-001: rgba(170, 177, 188, 1);
+  --gris-002: rgba(193, 198, 207, 1);
+  --gris-003: rgba(209, 213, 224, 1);
+  --gris-004: rgba(223, 226, 237, 1);
+  --gris-005: rgba(241, 242, 248, 1);
+  --gris-006: rgba(250, 251, 255, 1);
+  --gris-007: rgba(255, 255, 255, 1);
+
+
+  --background-body: #ebecf0;
+  --background-disabled: #F7F7F7;
+  --background-button-quantity: #f4293323;
+  --background-button-quantity--focus: #f4293346;
+
+
+  --gray-b8: #B8B5B5;
+  --white-fa: #FAFAFA;
+  --white-fafc: #FAFAFC;
+  --white-ee : #EEEEEE;
+  --white-f0: #F0F0F3;
+  --gray-ef: #EFEFEF;
+  --gray-ba: #BAB9B9;
+  --gray_f5: #F5F5F5;
+  --gray-6765: #676565;
+  --text-disabled: #9D9D9D;
+  --text-password: #575656;
+
+  --border-disabled: #EDEDED;
+  --border-options: #E5E3E3;
+  --border-icon-button-small: #E9E9E9;
+
+
+  //Fonts
+  --roboto: 'Roboto', sans-serif;
+  --firaSans: 'Fira Sans', sans-serif;
+  --roboto-condensed: 'Roboto Condensed', sans-serif;
+  --font-password: 'fontello','Roboto';
+
+
+  //Size Fonts
+  --font-p: 14px;
+  --font-h: 16px;
+}
+
+// colores
+
+// mapa para Color
+$mapCTexto: (
+    ct1: var(--negro-800),
+    ct2: var(--negro-00),
+    ct3: var(--negro-300)
+);
+
+// mapa para background color
+$mapBGColor: (
+    bgc1: var(--background-body),
+    bgc2: var(--gris-007),
+    bgc3: var(--gris-007)
+);
+
+// mapa font Size
+$mapFontFamily: (
+    ff-r:   var(--roboto),
+    ff-rc:  var(--roboto-condensed)
+);
+
+// mapa para font-weight
+$mapFW: (
+    thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    "black": 900
+);
+
+/* Media Queries */
+$media_queries : (
+    xs: '320px 360px',
+    s: '361px',
+    desktop: '550px'
+);
+
+$mobile-breakpoint: 768px;
+$desktop-breakpoint: 1024px;
+$showMenu-breakpoint: 1200px;

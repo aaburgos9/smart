@@ -1,0 +1,12 @@
+<a class="backButton" [ngStyle]="{
+    opacity: disabled ? 0.5 : 1
+  }">
+    <img src="./assets/img/layout/icon-dv-btnback.svg" alt="Atrás" (click)="disabled ? noClick() : click()" [ngStyle]="{
+      cursor: disabled ? 'not-allowed' : 'pointer'
+    }">
+    <span (click)="disabled ? noClick() : click()" [ngStyle]="{
+      cursor: disabled ? 'not-allowed' : 'pointer'
+    }">
+      <ng-content select="[contenedor]"></ng-content>
+  </span>
+</a> 

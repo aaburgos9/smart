@@ -1,0 +1,158 @@
+
+// =============================================================================
+// Import Base variables
+// =============================================================================
+
+@import "../variables/_base-variables";
+
+// =============================================================================
+// Text elements styles -mixin
+// =============================================================================
+
+@mixin text( $size: $font__size, $line: $font__base, $margin-top: 0, $margin-bottom: 0, $family: $bodyFont__family, $color: $gris-3a, $weight: 100, $style: normal) {
+    color: $color;
+    font-family: $family;
+    font-size: em($size);
+    font-weight: $weight;
+    line-height: em($line, $size);
+    margin-top: em($margin-top, $size);
+    margin-bottom: em($margin-bottom, $size);
+    font-style: $style;
+}
+
+/**
+ * Text elements - styles.
+ */
+
+h1, .h1
+{
+    @include text(16, 20, 0, 0, $color: $gris-3a, $family: $headingsFont__family, $weight: bold);
+}
+
+h2, .h2
+{
+    @include text(14, 18, 0, 0, $color: $gris-3a, $family: $headingsFont__family, $weight: bold);
+}
+
+h3, .h3
+{
+    @include text(13, 16, 0, 21, $color: $gris-3a, $family: $headingsFont__family, $weight: normal)
+}
+
+h4, .h4
+{
+    @include text(18, 21, 0, 18, $weight: 500)
+}
+
+h5, .h5
+{
+    @include text(16, 21, 0, 21, $weight: normal)
+}
+
+h6, .h6
+{
+    @include text(12, 16, 0, 10, $weight: normal)
+}
+
+p
+{
+    @include text(12, 16, 0, 12, $color: rgba($gris-70, 0.7), $weight: lighter)
+}
+
+a
+{
+    @include text(12, 16, 0, 12, $color: $gris-3a, $weight: normal);
+    color: $gris-70 !important;
+}
+
+ul li
+{
+    @include text(15, 16, 7, 0, $weight: normal)
+}
+
+em
+{
+    @include text(10.5, 13, 0, 0, $weight: normal);
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: justify;
+}
+
+/**
+ * Text colors - styles.
+ */
+
+.text__color--light
+{
+    color: white !important;
+}
+
+
+.text__color--rojo {
+    color: $rojo !important;
+}
+
+/**
+ * Text align - styles.
+ */
+
+ .text__align--left
+ {
+    display: block;
+    text-align: left;
+ }
+
+ .text__align--right
+ {
+    display: block;
+    text-align: right;
+ }
+
+ .text__align--center
+ {
+    display: block;
+    text-align: center;
+ }
+
+/**
+ * Text weight styles.
+ */
+
+ .text__weight--regular
+ {
+    font-weight: normal !important;
+ }
+
+/**
+ * Text margin variations
+ */
+
+ .text__margin--bottom0
+ {
+    margin-bottom: 0 !important;
+ }
+
+ .text__margin--bottom1
+ {
+    margin-bottom: 1em !important;
+ }
+
+ .text__margin--bottom2
+ {
+    margin-bottom: 2em !important;
+ }
+
+ .text__margin--bottom2-5 {
+    margin-bottom: 2.5em !important;
+  }
+
+ .text__margin--top1
+ {
+    margin-top: 1em !important;
+ }
+
+ .text__margin--top2
+ {
+    margin-top: 2em !important;
+ }

@@ -1,0 +1,19 @@
+@import '../globals/texts';
+
+//label para alineacion con input
+.mbass- {
+  &formElement {
+    &__label {
+      margin-left: 8px;
+      @extend %defaultFont;
+      font-size: var(--font-xs);
+      font-weight: var(--fw-medium);
+    }
+
+    &__additionalLabel {
+      @extend %defaultFont;
+      font-size: var(--font-xxxs);
+      color: var(--gray-6765);
+    }
+  }
+}

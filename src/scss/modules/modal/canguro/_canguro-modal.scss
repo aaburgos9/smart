@@ -1,0 +1,277 @@
+/**
+ * Modules - Canguro modal
+ */
+
+ .canguroModal
+ {
+	 background-color: $gris-ed;
+	 width: 97%;
+	 border-radius: em(5) em(5) 0 0;
+	 padding: em(8.75) em(8.75) em(0);
+	 position: absolute;
+	 bottom: 0;
+	 /*
+	 @include prefix((
+		  box-sizing: border-box,
+		  transition: ease all 0.7s,
+		  transform: translateY(30em),
+	 ), webkit moz o ms);*/
+	 &__header
+	 {
+		 width: 100%;
+		 min-height: 2em;
+		 padding: 0;
+		 margin: 0;
+
+		 /*LF*/
+		 display: flex;
+		 align-items: center;
+		 justify-content: center;
+		 flex-direction: column;
+
+		/*LF*/
+		&--closeCanguro{
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			align-self: flex-end;
+			/*margin-bottom: 0px;*/
+		}
+		/*LF*/
+		&--closeCanguro img{
+			display: inline-block;
+			width: 100%;
+		}
+
+		h2 {
+			width: 100%;
+			margin: 0;
+			font-family: "Roboto", sans-serif;
+			font-size: 18px !important;
+			line-height: 22px !important;
+			font-weight: 700;
+			text-align: center;
+			font-style: normal;
+			color: #575757;
+		}
+
+		 .content
+		 {
+			 &--sb
+			 {
+				 padding-bottom: em(14) !important;
+				 @include prefix((
+					 display: flex,
+					 justify-content: space-between,
+					 align-items: center,
+				 ), webkit moz o ms);
+			 }
+			 .icon
+			 {
+				 width: 70px;
+				 height: auto;
+				 padding: 0;
+				 margin: 0;
+			 }
+			 h3
+			 {
+				 font-size: em(14);
+				 font-weight: 500;
+				 text-align: left;
+				 padding: 0 em(10);
+				 margin: 0;
+				 line-height: normal;
+				 @include prefix((
+					 flex: 1,
+				 ), webkit moz o ms);
+			 }
+			 .closeButton
+			 {
+				 width: 30px;
+				 background-color: transparent;
+				 border: none;
+				 padding: 0;
+				 margin: 0;
+				 height: 0;
+				 @include prefix((
+					 display: flex,
+					 justify-content: center,
+					 align-items: center,
+				 ), webkit moz o ms);
+			 }
+		 }
+		 .contentsvo
+		 {
+			 &--sb
+			 {
+				 padding-bottom: em(14) !important;
+				 @include prefix((
+					 display: flex,
+					 justify-content: center,
+					 align-items: center,
+				 ), webkit moz o ms);
+			 }
+			 .icon
+			 {
+				 width: 70px;
+				 height: auto;
+				 padding: 0;
+				 margin: 0;
+			 }
+			 h3
+			 {
+				 font-size: em(14);
+				 font-weight: 500;
+				 text-align: left;
+				 padding: 0 em(10);
+				 margin: 0;
+				 line-height: normal;
+			 }
+		 }
+	 }
+	 &__body
+	 {
+		/* width: 90%;*/
+		 margin: 0;
+		 /*padding-top: em(14);*/
+		 overflow-y: auto;
+		 max-height: 70vh;
+		 /*border-top: 2px solid $gris-cc;*/
+		 @include prefix((
+			  box-sizing: border-box,
+		 ), webkit moz o ms);
+
+		/*LF*/
+		&--paragraph{
+			font-family: "Roboto", sans-serif;
+			font-size: 14px;
+			line-height: 16px;
+			font-weight: 400;
+			text-align: left;
+			font-style: normal;
+			color: #575757;
+			margin-top: 5px;
+			margin-bottom: 5px;
+			position: relative;
+		}
+		/*LF*/
+		&--paragraph::after {
+			content: "";
+			display: inline-block;
+			width: 100%;
+			height: 2px;
+			background-color: #d0d0d0;
+			border-radius: 30px; 
+		}
+		/*LF*/
+		&--description {
+			margin-bottom: 8px;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+			padding: 10px;
+			background-color: #fff;
+			border-radius: 6px; }
+		/*LF*/
+		&--description img {
+			display: inline-block;
+			width: 32px;
+			margin-right: 15px; }
+		/*LF*/
+		&--description p {
+			display: inline-block;
+			width: 95%;
+			font-family: "Roboto", sans-serif;
+			font-size: 14px;
+			line-height: 16px;
+			font-weight: 400;
+			text-align: left;
+			font-style: normal;
+			color: #575757; }
+		/*LF*/
+		&--description p strong {
+			font-weight: bold; }
+		
+		 &--naked
+		  {
+			  border: none !important;
+		  }
+		  &--no-top
+		  {
+			  padding-top: 0 !important;
+		  }
+		 .canguroImage
+		  {
+			 width: 100%;
+			 margin: 0;
+			 padding: 0;
+		  }
+		 p
+		 {
+			 font-size: 0.85em;
+			 margin-top: em(10);
+		 }
+		 ul
+		 {
+			 padding: 0 0 0 em(14);
+			 margin: em(10) 0;
+			 list-style: url(/src/assets/img/layout/icon-dv-list-canguro.svg);
+			 li
+			 {
+				 font-size: 0.85em;
+				 padding: 0 em(21) 0 em(7) ;
+				 position: relative;
+			 }
+		 }
+		 a
+		 {
+			 font-weight: bold;
+			 font-size: 0.9em;
+		 }
+		 .valueLabel
+		 {
+			 width: 65%;
+			 color: $negro-57;
+			 background-color: rgba(204, 204, 204, 0.3);
+			 border-radius: em(3);
+			 padding: em(3) em(14);
+			 margin: em(14) auto;
+			 text-decoration: none !important;
+			 text-align: center;
+			 &__title
+			 {
+				 font-size: 0.8em;
+				 font-weight: 100;
+				 display: block;
+				 margin: 0;
+				 padding: em(7) 0 0 0;
+				 line-height: 0.8em;
+			 }
+			 &__value
+			 {
+				 font-size: 1.2em;
+				 font-weight: bold;
+				 display: block;
+				 &::before
+				 {
+					 content: '$ ';
+				 }
+			 }
+		 }
+	 }
+	 @include media(md)
+	 {
+		 width: em(300);
+	 }
+	 @include media(lg)
+	 {
+		 width: em(450);
+	 }
+	 @include media(xlg)
+	 {
+		 width: em(500);
+	 }
+ }

@@ -1,0 +1,288 @@
+
+/**
+* Modules - Result List
+*/
+
+.resultList
+{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &--fixed
+    {
+        margin: em(14) 0 0 0;
+    }
+    &--toggle
+    {
+        margin: em(3) 0 0 0;
+    }
+    &__item
+    {
+        width: 100%;
+        color: $negro-57;
+        background-color: $gris-ed;
+        border-radius: em(5);
+        padding: 0;
+        text-decoration: none !important;
+        position: relative;
+        margin: 0 0 em(3) 0;
+        min-height: em(50);
+        padding: em(10) em(13);
+        @include prefix((
+            box-sizing: border-box,
+            display: flex,
+            align-items: center,
+            justify-content: space-between,
+        ), webkit moz o ms);
+        &__content
+        {
+            text-align: left;
+            font-size: em(11.5);
+            @include prefix((
+                flex: 1,
+            ), webkit moz o ms);
+            h3
+            {
+                font-weight: bold;
+                text-decoration: none !important;
+                font-size: 1em;
+                line-height: em(14);
+                margin: 0;
+                padding: 0;
+            }
+            .small
+            {
+                font-size: 0.8em;
+                line-height: 0.8em;
+            }
+        }
+    }
+    &--isHide
+    {
+        display: none;
+    }
+    &--isShow
+    {
+        display: block;
+    }
+}
+
+/**
+ * Modules - Result Description
+ */
+
+ .resultDescription
+ {
+     width: 100%;
+     list-style: none;
+     padding: em(14);
+     margin: em(23) 0 em(-7) 0;
+     background-color: white;
+     border-radius: em(5);
+     @include prefix((
+          box-sizing: border-box,
+          display: flex,
+          flex-grow: 2,
+          flex-wrap: wrap,
+     ), webkit moz o ms);
+     &--shadow
+     {
+         box-shadow: 1px 3px 5px rgba($color: $gris-3a, $alpha: .2);
+         margin: em(14) 0;
+         padding: em(10);
+     }
+     &--shadowRounded
+     {
+         box-shadow: 1px 3px 5px rgba($color: $gris-3a, $alpha: .2);
+         margin: em(14) 0;
+         padding: em(10);
+         border-radius: em(10);
+     }
+     &__icon
+     {
+         width: em(37);
+         display: inline-block;
+         img
+         {
+             width: 100%;
+         }
+     }
+     &__content
+     {
+         padding-left: em(14);
+         text-align: left;
+         font-size: em(14);
+         width: 83%;
+         @include prefix((
+             flex: 1
+         ), webkit moz o ms);
+         h3
+         {
+             font-weight: bold;
+             text-decoration: none !important;
+             font-size: 1em;
+             line-height: em(16);
+             margin: 0 0 em(5) 0;
+             padding: 0;
+             display: block;
+         }
+         h2
+         {
+             font-weight: bold;
+             text-decoration: none !important;
+             font-size: 1.25em;
+             margin: 0 0 em(3) 0;
+             padding: 0;
+             display: inline-block;
+             &:before
+             {
+                 content: '$';
+             }
+         }
+         em
+         {
+             width: 100%;
+             display: block;
+             font-size: 0.85em;
+         }
+         p
+         {
+             margin: 0;
+             font-size: 0.85em;
+             line-height: 1.1em;
+             padding: 0;
+             width: 100%;
+         }
+         &--gray
+         {
+             background-color: $blanco-f8;
+             padding: em(10);
+             background-image: url(/assets/img/layout/image_cc_result-b.svg);
+             background-size: em(55) em(55);
+             background-position: center right;
+             background-repeat: no-repeat;
+             overflow: hidden;
+             width: 100%;
+             border-radius: em(5);
+             @include prefix((
+                 display: flex,
+                 align-items: center,
+                 justify-content: space-between,
+             ), webkit moz o ms);
+         }
+     }
+ }
+
+/**
+ * Modules - Account Card
+ */
+
+.accountCard
+{
+    width: 100%;
+    list-style: none;
+    padding: em(14);
+    margin: 0  auto em(10) auto;
+    background-color: white;
+    border-radius: em(5);
+    text-decoration: none !important;
+    @include prefix((
+         box-sizing: border-box,
+         display: flex,
+         align-items: center,
+         justify-content: space-between,
+    ), webkit moz o ms);
+    @include media(md)
+    {
+        width: 60%;
+    }
+    @include media(lg)
+    {
+        background-color: $gris-ed;
+        width: 55%;
+    }
+    @include media(xlg)
+    {
+        background-color: $gris-ed;
+        width: 55%;
+    }
+    &__content
+    {
+        text-align: left;
+        font-size: em(14);
+        width: 100%;
+        p
+        {
+            margin: 0;
+            font-size: 1em;
+            line-height: 1.3em;
+            padding: 0;
+            width: 100%;
+        }
+    }
+    &__icon
+    {
+        width: 17px;
+        margin-left: 1em;
+        @include prefix((
+            box-sizing: border-box,
+            display: flex,
+            align-items: center,
+            justify-content: center,
+        ), webkit moz o ms);
+        img
+        {
+            width: 100%;
+        }
+    }
+}
+
+/**
+ * Modules - Result accesibility
+ */
+
+.resultAccesibility{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    color: $negro-57;
+    background-color: $gris-ed;
+    margin: 0;
+    padding: 13px 15px;
+    border-radius: 5px;
+    &:hover{
+        background-color: darken($gris-ed, 5%);
+    }
+
+    span, strong {
+        display: inline-block;
+        width: 100%;
+        color: $negro-57;
+    }
+
+    strong{
+        font-weight: bold;
+    }
+
+    &.result__Confir__item--padTooltip{
+        padding-right: 40px;
+    }
+
+    &.result__Confir__item--small{
+        span, strong{
+            display: inline;
+            font-size: $font__size - 2;
+            text-align: justify;
+        }
+    }
+
+    &--heigth{
+        min-height: 152px;
+    }
+}
+//Container oculto
+.result__Confir__item--hidden{
+    display: none;
+}

@@ -1,0 +1,80 @@
+{
+  "forbidden": {
+    "pageTitle": "Acceso denegado",
+    "pageMessage": "Lo sentimos, esta página no se encuentra disponible."
+  },
+  "appBoot": {
+    "pageTitle": "Conectando",
+    "pageMessage": "Por favor espera"
+  },
+  "BEN001": {
+    "texto001": "Usted tendrá:",
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar",
+    "botonContinuar": "Continuar"
+  },
+  "CON001": {
+    "texto001": "Usted tendrá:",
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar",
+    "botonContinuar": "Continuar",
+    "botonAceptar": "Aceptar",
+    "botonOmitir": "Omitir"
+  },
+  "CUE001": {
+    "texto001": "Abra su Cuenta Móvil<br>en 5 minutos",
+    "texto002": "Hágase Cliente",
+    "texto003": "Y de forma inmediata acceda a:",
+    "botonContinuar": "Abrir cuenta móvil"
+  },
+  "TAR001": {
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar"
+  },
+  "ADN001": {
+    "botonOmitir": "Omitir",
+    "botonContinuar": "Adquirir"
+  },
+  "BIO001": {
+    "texto001": "Usted tendrá:",
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar",
+    "botonContinuar": "Continuar"
+  },
+  "BIO002": {
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar",
+    "botonContinuar": "Continuar"
+  },
+  "BIO003": {
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar",
+    "botonContinuar": "Continuar"
+  },
+  "ACV001": {
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar",
+    "botonContinuar": "Continuar"
+  },
+  "APC001": {
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar",
+    "botonContinuar": "Continuar"
+  },
+  "SEG001": {
+    "botonOmitir": "Omitir",
+    "botonAdquirir": "Adquirir",
+    "botonAceptar": "Aceptar"
+  },
+  "SDC001": {
+    "botonOmitir": "Omitir",
+    "botonAceptar": "Solicitar"
+  },
+  "AUT001": {
+    "botonAtras": "Atrás",
+    "botonRegresar": "Regresar",
+    "botonContinuar": "Continuar",
+    "botonOmitir": "Omitir",
+    "botonAceptar": "Aceptar"
+  }
+}

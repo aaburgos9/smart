@@ -1,0 +1,18 @@
+<button
+  class="mbaas-button--{{ classButton }}"
+  [type]="buttonType"
+  [disabled]="disabled"
+  name="button"
+  (click)="setPosition($event)"
+  (click)="disabled ? noClick() : click()"
+  title="botón {{ label }}"
+>
+  <ng-content></ng-content>
+
+  <span
+    *ngIf="showEffect && classButton !== 'iconSimple' && classButton !== 'back'"
+    class="mbaas-button__ripple"
+    [style.--mouse-y]="mouseY + 'px'"
+    [style.--mouse-x]="mouseX + 'px'"
+  ></span>
+</button>

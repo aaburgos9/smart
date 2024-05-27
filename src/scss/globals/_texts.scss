@@ -1,0 +1,124 @@
+@import "../mixins";
+
+//Titulos genericos para todos los elementos
+%h {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  @extend %defaultFont;
+  font-size: 16px;
+  font-weight: var(--fw-bold);
+  color: var(--titles-color);
+}
+
+%defaultFont {
+  font-family: var(--firaSans);
+  font-size: var(--font-medium);
+  line-height: 150%;
+  font-weight: var(--fw-regular);
+  text-align: left;
+  font-style: normal;
+  color: var(--text-color);
+}
+
+%defaultTitle {
+  @extend %defaultFont;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  font-weight: var(--fw-bold);
+  color: var(--titles-color);
+}
+
+//Clase específica títulos del contentBox
+.smart- {
+  &titleContainer {
+    &__title {
+      @extend %h;
+      margin-top: 16px;
+      &:first-of-type {
+        margin-top: 0px;
+      }
+      &--h1 {
+        @extend .smart-titleContainer__title;
+        @extend %defaultTitle;
+        font-size: 34px;
+      }
+      &--h2 {
+        @extend .smart-titleContainer__title;
+        @extend %defaultTitle;
+        font-size: 22px;
+      }
+      &--h3 {
+        @extend .smart-titleContainer__title;
+        @extend %defaultTitle;
+        font-size: 18px;
+      }
+      &--h4 {
+        @extend .smart-titleContainer__title;
+        @extend %defaultTitle;
+        font-size: 14px;
+      }
+      &--h5 {
+        @extend .smart-titleContainer__title;
+        @extend %defaultTitle;
+        font-size: 14px;
+      }
+    }
+    &__subtitle {
+      margin-top: 16px;
+      @extend %defaultFont;
+      font-weight: var(--fw-medium);
+    }
+    &--desktop {
+      display: none;
+      width: 100%;
+      margin-top: 32px;
+      padding: 0 16px;
+      h2,
+      h1 {
+        @extend .smart-titleContainer__title;
+        margin-bottom: 0px;
+        @extend %defaultFont;
+        font-size: 24px;
+        color: var(--titles-color);
+      }
+      h3 {
+        @extend .smart-titleContainer__title;
+        margin-bottom: 8px;
+        @extend %defaultFont;
+        font-size: 20px;
+        color: var(--text-enable);
+        font-weight: var(--fw-medium);
+      }
+    }
+  }
+}
+
+.smart- {
+  &link {
+    text-decoration: underline;
+    @extend %defaultFont;
+
+    &:visited {
+      text-decoration: underline;
+    }
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+  &paragraph {
+    @extend %defaultFont;
+    color: var(--gray-6765);
+  }
+}
+
+.smart- {
+  &divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--gray-ca);
+    margin: 0 auto;
+  }
+}

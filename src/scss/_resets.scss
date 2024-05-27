@@ -1,0 +1,230 @@
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  outline: none;
+  border: 0;
+  border-width: 0;
+  font-family: var(--firaSans);
+  vertical-align: baseline;
+
+  //Resaltador de selección en el navegador
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+::selection {
+  background: #d7d7d7;
+}
+
+
+/* Evitamos problemas con las imagenes */
+img,
+picture,
+video,
+iframe,
+figure {
+  max-width: 100%;
+  display: block;
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+
+  &:hover, &:focus {
+      text-decoration: none;
+  }
+}
+
+
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+blockquote,
+i,
+b,
+u,
+em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::selection {
+  background: #d7d7d7;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form,
+input,
+textarea,
+select,
+button,
+label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  appearance: none;
+}
+
+//Forms elements
+button, select {
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  appearance: button;
+  -webkit-appearance: button;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none
+}
+
+textarea,
+input:matches(
+[type="email"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="url"]
+) {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: none
+}
+
+//Inputs number hide-spins
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+  appearance: none;
+  -moz-appearance:none;
+}
+
+
+//Inputs Password
+input[type="password"]{
+  text-align: left;
+}
+
+input[type=number] {
+  appearance: texfield;
+  -moz-appearance:textfield;
+  &:focus{
+    appearance: texfield;
+    -moz-appearance:textfield;
+  }
+}
+
+label{
+  display: inline-block;
+  width: auto;
+  position: relative;
+}
+
+
+/* Reseteamos las tablas */
+table,
+tr,
+td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  background-color: var(--background-body);
+  /* Optimizacion de la visualización de la tipografia */
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  //Deshabilitar efecto rebote navegadores en los ejes
+  overscroll-behavior-x: none;
+  overscroll-behavior-y: none;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #cacaca;
+}
+
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #cacaca;
+  border-radius: 4px;
+  border: none;
+}

@@ -1,0 +1,115 @@
+
+/**
+ * Modules - Clock type loader
+ */
+
+.clockLoader
+{
+    border-radius: 50%;
+    border: 8px solid white;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    margin: 0 auto em(32) auto;
+    &:after
+    {
+        content: "";
+        position: absolute;
+        background-color: white;
+        top: 92px;
+        left: 92px;
+        height: 59px;
+        width: 8px;
+        border-radius: 6px;
+        @include prefix((
+            transform-origin: 50% 0,
+            animation: grdAiguille 5s linear infinite
+        ), webkit moz o ms);
+    }
+    &:before
+    {
+        content: "";
+        position: absolute;
+        background-color: white;
+        top: 92px;
+        left: 92px;
+        height: 44px;
+        width: 8px;
+        border-radius: 6px;
+        @include prefix((
+            transform-origin: 50% 0,
+            animation: ptAiguille 96s linear infinite
+        ), webkit moz o ms);
+    }
+    &__numeral
+    {
+        height: 25px;
+        width: 8px;
+        border-radius: 3px;  
+        background-color: white;
+        position: absolute;
+        top: -5px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        &:before
+        {
+            content: '';
+            height: 25px;
+            width: 8px;
+            border-radius: 3px;  
+            background-color: white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 170px;
+        }
+        &--vertical
+        {
+            top: 81px;
+            right: -170px;
+            @include prefix((
+                transform: rotate(90deg),
+            ), webkit moz o ms);
+        }
+    }
+}
+
+@-webkit-keyframes grdAiguille
+{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes grdAiguille
+{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+@-webkit-keyframes ptAiguille
+{
+    0%{-webkit-transform:rotate(0deg);}
+    100%{-webkit-transform:rotate(360deg);}
+}
+
+@keyframes ptAiguille
+{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+.loaderTitle
+{
+    font-size: 1.1em;
+    color: white;
+    margin-bottom: em(70);
+}
+
+.loaderSubTitle
+{
+    font-size: 0.9em;
+    color: white;
+    margin-top: em(50);
+}

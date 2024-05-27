@@ -1,0 +1,134 @@
+//-------------------------------- Variables
+
+//Charset
+@charset "UTF-8";
+
+:root{
+  font-size: 10px;
+  // XSmall: 11px a 12px
+  --font-xsmall: clamp(1.1rem, 0.5vw + 0.8rem, 1.2rem);
+  // Small: 12px a 14px
+  --font-small: clamp(1.2rem, 1vw + 0.6rem, 1.4rem);
+  // Medium: 14px a 16px
+  --font-medium: clamp(1.4rem, 1vw + 0.8rem, 1.6rem);
+  // Large: 16px a 18px
+  --font-large: clamp(1.6rem, 1vw + 1rem, 1.8rem);
+
+  --fw-thin: 100;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --background-body: #ebecf0;
+  --background-contextBox: #FFFFFF;
+  --background-white: #FFFFFF;
+  --disabled-object: #939393;
+  --background-disabled: #F7F7F7;
+  --background-checkbox: #FFFFFF;
+  --background-toggle-off: #D9D9D9;
+  --background-toggle-on: #0df205;
+  --background-button-quantity: #f4293323;
+  --background-button-quantity--focus: #f4293346;
+  --background-button-action-hover: #F1F2F8;
+  --background-button-back-hover: #2C2C2C;
+
+  --green-primary: #0df205;
+  --green-secondary: #0fb309;
+  --gray-ad: #ADADAD;
+  --gray-ca: #CACACA;
+  --gray-d9: #D9D9D9;
+  --gray-b8: #B8B5B5;
+  --white-fa: #FAFAFA;
+  --white-fafc: #FAFAFC;
+  --white-ff: #FFFFFF;
+  --white-ee : #EEEEEE;
+  --white-f0: #F0F0F3;
+  --black-00: #000000;
+  --gray-df: #DFE2ED;
+  --gray-ef: #EFEFEF;
+  --gray-ba: #BAB9B9;
+  --gray_f5: #F5F5F5;
+  --gray-6765: #676565;
+  --text-color: #404040;
+  --text-disabled: #9D9D9D;
+  --text-enable: #CACACA;
+  --titles-color: #000000;
+  --text-placeholder: #676565;
+  --text-invalid: #B70412;
+  --text-helper: #676565;
+  --text-password: #575656;
+  --gray-enterprises:#4e4e4e;
+
+  --input-background: #FFFFFF;
+  --options-background: #FAFAFC;
+  --background-filled: #FFFFFF;
+  --border-filled: #AAB1BC;
+  --border-disabled: #EDEDED;
+  --border-options: #E5E3E3;
+  --border-invalid-color: #B70412;
+  --border-dropdown: #D1D5E0;
+  --border-input: #D1D5E0;
+  --borer-checkbox: #B8B5B5;
+  --border-icon-button: #EEEEEE;
+  --border-icon-button-small: #E9E9E9;
+
+  --option-hover: #D1D5E0;
+
+  //Fonts
+  --roboto: 'Roboto', sans-serif;
+  --firaSans: 'Fira Sans', sans-serif;
+  --roboto-condensed: 'Roboto Condensed', sans-serif;
+  --font-password: 'fontello','Roboto';
+
+  //Size Fonts
+  --font-p: 14px;
+  --font-h: 16px;
+
+  /* button continue*/
+ --disabledButton: #d1d5e0;
+ --enabledButton: var(--green-primary);
+ --pressButton: #277312;
+}
+
+// colores
+
+// mapa para Color
+$mapCTexto: (
+    ct1: var(--text-color),
+    ct2: var(--titles-color),
+    ct3: var(--text-enable),
+    ct4: var(--white-ff)
+);
+
+// mapa para background color
+$mapBGColor: (
+    bgc1: var(--background-body),
+    bgc2: var(--background-contextBox),
+    bgc3: var(--background-white)
+);
+
+// mapa font Size
+$mapFontFamily: (
+    ff-r:   var(--roboto),
+    ff-rc:  var(--roboto-condensed)
+);
+
+// mapa para font-weight
+$mapFW: (
+    thin: 100,
+    light: 300,
+    regular: 400,
+    medium: 500,
+    bold: 700,
+    "black": 900
+);
+
+/* Media Queries */
+$media_queries : (
+    xs: '320px 360px',
+    s: '361px',
+    desktop: '550px'
+);
+

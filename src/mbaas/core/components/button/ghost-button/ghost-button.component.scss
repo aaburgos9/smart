@@ -1,0 +1,30 @@
+@import "../../../../../assets/styles/globals/_texts.scss";
+
+.mbass-ghostButton {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px 4px 8px;
+  margin-right: 16px;
+  border-radius: 4px;
+  @extend %defaultFont;
+  color: var(--negro-900);
+  font-size: var(--font-xxs);
+
+  &:active {
+    background-color: var(--gris-005);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 58%;
+    cursor: not-allowed;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+        background-color: var(--gris-005);
+    }
+  }
+}
