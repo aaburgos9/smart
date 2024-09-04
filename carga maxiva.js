@@ -63,3 +63,11 @@ function enviar_carga_masiva_monetizacion(){
 	    }
 	});
 	
+
+	Error al parsear el JSON: SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+    at JSON.parse (<anonymous>)
+    at Object.success (40.js:1502:39)
+    at n (jquery-1.6.2.min.js:16:14765)
+    at Object.fireWith [as resolveWith] (jquery-1.6.2.min.js:16:15534)
+    at w (jquery-1.6.2.min.js:18:11661)
+    at XMLHttpRequest.d (jquery-1.6.2.min.js:18:17479)
